@@ -1,4 +1,9 @@
-# Step 1 - Setting up your project
+---
+layout: step
+number: 1
+title: Setting up your project
+permalink: /step01/
+---
 
 When creating a Node.js project, you will be installing a lot of different things along the way. If you want to share your project with others, you need to have a list of the things you installed, so that other people know what to install in order to run the project.
 
@@ -54,12 +59,12 @@ You will see a confirmation of your `package.json`. If you're happy with it, pre
 
 Great! You should now see a new file called `package.json` in your project's folder.
 
-### [Go to Step 2 >>>>](step02.md)
+### [Go to Step 2 >>>>](/step02)
 
 ## Keywords
 
 | Keyword | Explanation |
-|--------|:-------------------------------:|
+|:--------|:-------------------------------|
 | `package.json` | A `package.json` is the file used to store information about a Node.js project, such as its name and its dependencies. Read more [here](https://docs.npmjs.com/files/package.json). |
 | npm | npm is a "package manager" for Node.js, meaning it allows you to easily install external modules (or chunks of code) published by others and use them in your project. |
 | dependencies | Dependencies are external code modules that are required to run your project. |

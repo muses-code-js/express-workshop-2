@@ -1,4 +1,10 @@
-# Step 3 - Building the server
+---
+layout: step
+number: 3
+title: Building the server
+permalink: /step03/
+---
+
 
 The first thing we need to do is build our server. You will always need to build a server when writing back-end code. A server can be built in pure Node.js, but Express gives us simpler syntax to work with.
 

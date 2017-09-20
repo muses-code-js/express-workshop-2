@@ -1,4 +1,10 @@
-# Step 4 - Communicating with the server
+---
+layout: step
+number: 4
+title: Communicating with the server
+permalink: /step04/
+---
+
 
 Now that we've built the server, we need to communicate with it. We're going to control the server with **handler functions**.
 
@@ -75,7 +81,7 @@ Otherwise for cloud9, click the `Preview` button on the top menu, you will see a
 
 If you see your message in the browser, congratulations! You just sent your first response from the server.
 
-### [Go to Step 5 >>>>](step05.md)
+### [Go to Step 5 >>>>](/step05)
 
 | Keyword | Explanation |
 |--------|:-------------------------------:|

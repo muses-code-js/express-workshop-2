@@ -1,4 +1,10 @@
-# Stretch goals!
+---
+layout: step
+number: 10
+title: Stretch goals!
+permalink: /stretch-goals/
+---
+
 
 If you finish early, or want to keep working on this as a side project after the workshop, here's some ideas on how to upgrade your creation.
 

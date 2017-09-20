@@ -1,4 +1,9 @@
-# Step 5 - Routing
+---
+layout: step
+number: 5
+title: Routing
+permalink: /step05/
+---
 
 At the moment our server only does one thing. When it receives a request from the `/` endpoint, it sends back the same response: "Yay Node Girls!".
 
@@ -26,7 +31,7 @@ app.get("/chocolate", function (req, res) {
 
 *Challenge:* Add some code so that your server sends one message when the endpoint is `/node` and another one when it's `/girls`.
 
-### [Go to Step 6 >>>>](step06.md)
+### [Go to Step 6 >>>>](/step06)
 
 
 | Keyword | Explanation |

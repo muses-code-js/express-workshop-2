@@ -1,4 +1,9 @@
-# Step 8 - Saving your blog post
+---
+layout: step
+number: 8
+title: Saving your blog post
+permalink: /step08/
+---
 
 Right now, your precious blog posts aren't being saved anywhere, which is a bit of a shame.  Let's do something about that.
 
@@ -115,7 +120,7 @@ Oh by the way, if you want to get the current timestamp, use the JavaScript `Dat
 
 Good luck!
 
-### [**Go to Step 9 >>>**](step09.md)
+### [**Go to Step 9 >>>**](/step09)
 
 | Keyword | Explanation |
 |--------|:-------------------------------:|

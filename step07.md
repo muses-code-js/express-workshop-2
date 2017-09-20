@@ -1,4 +1,10 @@
-# Step 7 - Sending your blog post to your server
+---
+layout: step
+number: 7
+title: Sending your blog post to your server
+permalink: /step07/
+---
+
 
 So far we have been requesting data from our server.  But we can also *send* data to the server to be stored somewhere.  
 
@@ -94,9 +100,8 @@ Refresh your server and have another go at writing a blogpost.
 
 You should now see an object in the console.  The key should be `blogpost`, just like the name attribute in the form on the HTML page.  The value of `blogpost` will be your message!
 
-### [**Go to Step 8 >>>**](step08.md)
+### [**Go to Step 8 >>>**](/step08)
 
----
 | Keyword | Explanation |
 |--------|:-------------------------------:|
 | `GET` | An HTTP method for fetching data. Read more [here](http://www.w3schools.com/tags/ref_httpmethods.asp). For more detailed docs [read this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) |

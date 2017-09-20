@@ -1,4 +1,10 @@
-# Step 9 - Displaying your blog posts
+---
+layout: step
+number: 9
+title: Displaying your blog posts
+permalink: /step09/
+---
+
 
 So now we're saving the blog posts to the server.  Time to get them and display them on the page!
 
@@ -16,4 +22,4 @@ If all goes well, you should have a fully functional CMS!
 
 ## Congratulations!! 😍
 
-## [**Want more? <br> Try out some stretch goals >>>**](stretch-goals.md)
+## [**Want more? <br> Try out some stretch goals >>>**](/stretch-goals)
