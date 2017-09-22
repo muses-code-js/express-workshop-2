@@ -1,5 +1,5 @@
 ---
-layout: step
+layout: page
 number: 0
 title: Setting up your Environment
 permalink: step0/
