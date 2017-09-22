@@ -7,7 +7,7 @@ title: Start
 number: start
 ---
 
-<img src="/assets/logo.png">
+<img src="assets/logo.png">
 
 # Express Workshop
 
