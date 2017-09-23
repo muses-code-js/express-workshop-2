@@ -4,3 +4,23 @@
 
 @import "minima";
 @import "step-nav";
+
+div.nav {
+  display: inline-block;
+  width: 250px;
+  vertical-align: top;
+  float: right;
+}
+
+div.post-content {
+  display: inline-block;
+  width: 700px;
+  vertical-align: top;
+}
+
+
+div.home {
+  display: block;
+  width: $content-width;
+
+}
