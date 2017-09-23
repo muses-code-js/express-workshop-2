@@ -20,6 +20,7 @@ This is an introductory workshop to Node.js and Express. You'll be building your
 [Express](http://expressjs.com/) is one of the most widely-used frameworks for Node.js. It simplifies base features of Node.js, making it easier and faster to build your application's backend. Learning Express gives you a great foundation for becoming a Node.js developer :sparkles:
 
 ## Workshop Structure
+{% include step-nav.html %}
 
 This workshop is divided into a number of steps. At the end of each segment, you should find a link to continue onto the next step. We suggest you follow along with the tutorial online, and write your code in a separate repository.
 
