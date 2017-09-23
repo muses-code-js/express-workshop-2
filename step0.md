@@ -10,3 +10,11 @@ We encourage you to use [cloud9.io](https://c9.io) to complete this workshop as 
 :raising_hand: **If you don't have a cloud9.io account, please let any of the mentors know and we'll send you an invitation to join our group space.**
 
 If you're comfortable setting up your development environment locally, please download Node from the Node.js website [here](https://nodejs.org/en/).
+
+#### 2. Fork this repository
+Fork this repository to your own GitHub account.  Instructions for doing this can be found [here](https://help.github.com/articles/fork-a-repo/).
+
+#### 3. Create a workspace in Cloud9.io
+If you're using [cloud9.io](https://c9.io) create a new workspace. Instructions for doing this can be found [here](https://docs.c9.io/v1.0/docs/create-a-workspace).
+
+:raising_hand: Make sure you:
