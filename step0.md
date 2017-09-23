@@ -28,3 +28,5 @@ If you're working in your local environment, clone your forked version of the re
 `$ git clone https://github.com/YOUR-USERNAME/express-workshop`
 
 This creates an express-workshop directory with the repository content inside. Change into the express-workshop directory, since that's where we'll be working from now on.
+
+`$ cd express-workshop`
