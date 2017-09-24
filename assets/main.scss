@@ -24,3 +24,12 @@ div.home {
   width: $content-width;
 
 }
+
+a.start-link {
+  background: green;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px darken(green, 40%);
+  color: white !important;
+  text-decoration: none;
+}
