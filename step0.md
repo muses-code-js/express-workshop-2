@@ -31,4 +31,4 @@ This creates an express-workshop directory with the repository content inside. C
 
 `$ cd express-workshop`
 
-### [Go to Step 1 >>>>](step01/)
+[Go to Step 1 >>>>](step01/)
