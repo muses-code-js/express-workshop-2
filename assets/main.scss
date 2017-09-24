@@ -26,10 +26,13 @@ div.home {
 }
 
 a.start-link {
-  background: green;
-  padding: 10px 16px;
+  background: #4CAF50;
+  padding: 8px 14px;
   border-radius: 6px;
-  border: 1px darken(green, 40%);
+  border: 2px solid #4CAF50;
   color: white !important;
   text-decoration: none;
+  &:hover {
+    border: 2px solid darken(#4CAF50, 10%) !important;
+  }
 }
