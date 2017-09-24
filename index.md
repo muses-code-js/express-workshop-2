@@ -31,7 +31,7 @@ Throughout each step, we have **bolded** any jargon that you may or may not be f
 
 ## [Lets get started](step0)
 
-## Useful Links
+## Useful Links >>>>
 
 * [What is Node?](https://github.com/node-girls/what-is-node)
 * [Node cheatsheet](https://github.com/node-girls/cheatsheets/blob/master/node-cheatsheet.md)
