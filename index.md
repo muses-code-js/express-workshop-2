@@ -29,7 +29,7 @@ You will see code snippets throughout the walkthrough. Try to resist the urge to
 Throughout each step, we have **bolded** any jargon that you may or may not be familiar with. These terms are explained in the [Keywords](https://github.com/node-girls/express-workshop/#keywords) section at the bottom of each page. You'll also find a link to our cheatsheets under [Useful Links](https://github.com/node-girls/express-workshop/#useful-links).
 
 
-## [Lets get started](step0)
+## [Lets get started >>>>](step0)
 
 ## Useful Links
 
