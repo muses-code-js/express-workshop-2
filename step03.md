@@ -2,7 +2,7 @@
 layout: step
 number: 3
 title: Building the server
-permalink: /step03/
+permalink: step03/
 ---
 
 
@@ -96,7 +96,7 @@ If you see this, congratulations! :clap: :clap: You have built yourself a server
 ![success](https://raw.githubusercontent.com/node-girls/workshop-cms/master/readme-images/step2-server02.png)
 
 
-### [Go to Step 4 >](step04.md)
+### [Go to Step 4 >](../step04)
 
 ## Keywords
 

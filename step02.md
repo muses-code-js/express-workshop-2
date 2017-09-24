@@ -2,7 +2,7 @@
 layout: step
 number: 2
 title: Installing Express
-permalink: /step02/
+permalink: step02/
 ---
 
 
@@ -20,7 +20,7 @@ Express should now be installed. Check your `package.json` file to make sure it 
 
 ![package.json screenshot](https://cloud.githubusercontent.com/assets/10683087/16382664/be35f0b4-3c79-11e6-82b6-ae9e4a037c3f.png)
 
-### [Go to Step 3 >](/step03)
+### [Go to Step 3 >](../step03)
 
 ## Keywords
 

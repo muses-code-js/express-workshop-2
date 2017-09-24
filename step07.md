@@ -2,7 +2,7 @@
 layout: step
 number: 7
 title: Sending your blog post to your server
-permalink: /step07/
+permalink: step07/
 ---
 
 

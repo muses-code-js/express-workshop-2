@@ -2,7 +2,7 @@
 layout: step
 number: 4
 title: Communicating with the server
-permalink: /step04/
+permalink: step04/
 ---
 
 
@@ -81,7 +81,7 @@ Otherwise for cloud9, click the `Preview` button on the top menu, you will see a
 
 If you see your message in the browser, congratulations! You just sent your first response from the server.
 
-### [Go to Step 5 >](/step05)
+### [Go to Step 5 >](../step05)
 
 | Keyword | Explanation |
 |--------|:-------------------------------:|

@@ -2,7 +2,7 @@
 layout: step
 number: 9
 title: Displaying your blog posts
-permalink: /step09/
+permalink: step09/
 ---
 
 
@@ -22,4 +22,4 @@ If all goes well, you should have a fully functional CMS!
 
 ## Congratulations!! 😍
 
-## [**Want more? <br> Try out some stretch goals >**](/stretch-goals)
+## [**Want more? <br> Try out some stretch goals >**](../stretch-goals)

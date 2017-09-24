@@ -2,7 +2,7 @@
 layout: step
 number: 8
 title: Saving your blog post
-permalink: /step08/
+permalink: step08/
 ---
 
 Right now, your precious blog posts aren't being saved anywhere, which is a bit of a shame.  Let's do something about that.
