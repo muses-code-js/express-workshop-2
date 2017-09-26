@@ -1,18 +1,30 @@
 div.step-nav {
-  border: 1px solid lightgrey;
+  border: 1px solid #e7e7e7;
+  background-color: #efefef;
   float: right;
   max-width: 250px;
+  font-size: 14px;
+
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 8px 0px 5px 10px;
+  }
+
   ul {
     list-style: none;
-    margin: 0px;
-    padding: 10px 12px 5px 12px;
+    margin: 0px 0px 30px 0px;
+    padding: 0px;
     li {
       margin-bottom: 0px;
-      padding: 5px 5px;
+      padding: 6px 15px 5px 15px;
 
     }
     li.active {
-      background-color: grey;
+      background-color: $nodegreen;
+      a {
+        color: white;
+      }
     }
   }
 }
