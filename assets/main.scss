@@ -2,6 +2,8 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+$nodegreen: #4CAF50;
+
 @import "minima";
 @import "step-nav";
 
@@ -25,14 +27,14 @@ div.home {
 
 }
 
-a.start-link {
-  background: #4CAF50;
+a.go-link {
+  background: $nodegreen;
   padding: 8px 14px;
   border-radius: 6px;
-  border: 2px solid #4CAF50;
+  border: 2px solid $nodegreen;
   color: white !important;
   text-decoration: none;
   &:hover {
-    border: 2px solid darken(#4CAF50, 10%) !important;
+    border: 2px solid darken($nodegreen, 10%) !important;
   }
 }
