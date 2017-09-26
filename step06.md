@@ -3,6 +3,20 @@ layout: step
 number: 6
 title: Serving static files
 permalink: step06/
+
+keywords:
+
+  - term: static assets
+    define: Files such as HTML, CSS and JavaScript documents or images that you want to appear in the browser.
+
+  - term: middleware
+    define: A function (or functions) that are invoked by Express before your final request handler is executed. Middleware sits between a raw request and its final intended route.
+
+  - term: use()
+    define: The method that tells Express to use a certain piece of middleware.
+
+  - term: express.static()
+    define: The built-in Express middleware function that makes it possible to serve static assets.
 ---
 
 So we know how to send back a simple message. But what if you want to send back a whole HTML page, or an image?
@@ -17,15 +31,6 @@ Say we want to serve all the static assets in our "public" folder. The `express.
 app.use(express.static("public"));
 ```
 
-## 1. Serve static files from your server
+# 1. Serve static files from your server
 
 Delete all your `app.get` endpoint functions, and replace them with the line of code above. Restart your server, refresh your browser and see what happens! If you see a `Node Girls` page, then your static assets have been successfully served.
-
-### [Go to Step 7 >](../step07)
-
-| Keyword | Explanation |
-|--------|:-------------------------------:|
-| static assets | Files such as HTML, CSS and JavaScript documents or images that you want to appear in the browser. |
-| middleware | A function (or functions) that are invoked by Express before your final request handler is executed. Middleware sits between a raw request and its final intended route. |
-| `use()` | The method that tells Express to use a certain piece of middleware. |
-| `express.static()` | The built-in Express middleware function that makes it possible to serve static assets. |

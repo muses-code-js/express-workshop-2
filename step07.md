@@ -3,6 +3,17 @@ layout: step
 number: 7
 title: Sending your blog post to your server
 permalink: step07/
+
+keywords:
+  - term: GET
+    define: An HTTP method for fetching data. Read more [here](http://www.w3schools.com/tags/ref_httpmethods.asp). For more detailed docs [read this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)
+  - term: POST
+    define: An HTTP method for sending data. Read more [here](http://www.w3schools.com/tags/ref_httpmethods.asp). For more detailed docs [read this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+  - term: middleware
+    define: Functions in Express that run before the final request handler.  A nice article explains in more depth [here](https://www.safaribooksonline.com/blog/2014/03/10/express-js-middleware-demystified)
+  - term: express-formidable
+    define: An Express middleware function that parses (reads) form and file data from the request.  Documentation on it [here](https://www.npmjs.com/package/express-formidable)
+
 ---
 
 
@@ -99,12 +110,3 @@ console.log(req.fields);
 Refresh your server and have another go at writing a blogpost.
 
 You should now see an object in the console.  The key should be `blogpost`, just like the name attribute in the form on the HTML page.  The value of `blogpost` will be your message!
-
-### [**Go to Step 8 >**](/step08)
-
-| Keyword | Explanation |
-|--------|:-------------------------------:|
-| `GET` | An HTTP method for fetching data. Read more [here](http://www.w3schools.com/tags/ref_httpmethods.asp). For more detailed docs [read this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) |
-| `POST` | An HTTP method for sending data. Read more [here](http://www.w3schools.com/tags/ref_httpmethods.asp). For more detailed docs [read this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)|
-| `middleware` | Functions in Express that run before the final request handler.  A nice article explains in more depth [here](https://www.safaribooksonline.com/blog/2014/03/10/express-js-middleware-demystified) |
-| `express-formidable` | An Express middleware function that parses (reads) form and file data from the request.  Documentation on it [here](https://www.npmjs.com/package/express-formidable)|

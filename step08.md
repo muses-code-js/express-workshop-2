@@ -3,6 +3,16 @@ layout: step
 number: 8
 title: Saving your blog post
 permalink: step08/
+keywords:
+  - term: JSON
+    define: A format for storing and transporting data. Read more [here](http://www.w3schools.com/js/js_json.asp). Or for more detailed docs [read this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+  - term: fs
+    define: A core Node.js module for interacting with the file system on your computer.  Read more [here](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html#fs_file_system)
+  - term: fs.readFile()
+    define: Asynchronously reads the entire contents of a file
+  - term: fs.writeFile()
+    define: Asynchronously writes data to a file
+    
 ---
 
 Right now, your precious blog posts aren't being saved anywhere, which is a bit of a shame.  Let's do something about that.
@@ -119,12 +129,3 @@ Here's a breakdown of what you want to achieve:
 Oh by the way, if you want to get the current timestamp, use the JavaScript `Date.now()` method.
 
 Good luck!
-
-### [**Go to Step 9 >**](/step09)
-
-| Keyword | Explanation |
-|--------|:-------------------------------:|
-| `JSON` | A format for storing and transporting data. Read more [here](http://www.w3schools.com/js/js_json.asp). Or for more detailed docs [read this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) |
-| `fs` | A core Node.js module for interacting with the file system on your computer.  Read more [here](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html#fs_file_system) |
-| `fs.readFile()` | Asynchronously reads the entire contents of a file |
-| `fs.writeFile()` | Asynchronously writes data to a file |

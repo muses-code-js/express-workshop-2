@@ -3,6 +3,15 @@ layout: step
 number: 2
 title: Installing Express
 permalink: step02/
+
+keywords:
+
+  - term: npm install [package-name]
+    define: The terminal command used to install a package from npm.
+
+  - term: --save
+    define: When added to the end of an `npm install` command, `--save` adds that npm package to the `package.json` file.
+
 ---
 
 
@@ -19,12 +28,3 @@ Run the following command in your terminal:
 Express should now be installed. Check your `package.json` file to make sure it has been added as a dependency. It will look like this:
 
 ![package.json screenshot](https://cloud.githubusercontent.com/assets/10683087/16382664/be35f0b4-3c79-11e6-82b6-ae9e4a037c3f.png)
-
-### [Go to Step 3 >](../step03)
-
-## Keywords
-
-| Keyword | Explanation |
-|--------|:-------------------------------:|
-| `npm install [package-name]` | The terminal command used to install a package from npm. |
-| `--save` | When added to the end of an `npm install` command, `--save` adds that npm package to the `package.json` file. |

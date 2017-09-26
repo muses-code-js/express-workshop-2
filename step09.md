@@ -22,4 +22,4 @@ If all goes well, you should have a fully functional CMS!
 
 ## Congratulations!! 😍
 
-## [**Want more? <br> Try out some stretch goals >**](../stretch-goals)
+### Now try out some stretch goals
