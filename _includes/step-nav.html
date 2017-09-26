@@ -2,7 +2,7 @@
 {% assign page_paths = site.header_pages | default: default_paths %}
 
 <div class="step-nav">
-
+  <h3>Workshop Steps</h3>
   <ul>
   {% for path in page_paths %}
     {% assign my_page = site.pages | where: "path", path | first %}
@@ -15,5 +15,13 @@
     {% endif %}
   {% endfor %}
   </ul>
+  <h3>Useful Links</h3>
+  <ul>
+  <li><a target="_blank" href="https://github.com/node-girls/what-is-node">What is Node?</a></li>
+  <li><a target="_blank" href="https://github.com/node-girls/cheatsheets/blob/master/node-cheatsheet.md">Node cheatsheet</a></li>
+  <li><a target="_blank" href="https://github.com/node-girls/cheatsheets/blob/master/command-line-cheatsheet.md">Command line cheatsheet</a></li>
+  <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">MDN Javascript Reference</a></li>
+</ul>
+
 
 </div>
