@@ -10,7 +10,7 @@
     {% for keyword in page.keywords %}
     <tr>
       <td>{{keyword.term}}</td>
-      <td>{{keyword.define}}</td>
+      <td>{{ keyword.define | markdownify }}</td>
     </tr>
 
 {% endfor %}
