@@ -2,7 +2,7 @@
 layout: step
 number: 10
 title: Stretch goals!
-permalink: stretch-goals/
+permalink: step010/
 ---
 
 
