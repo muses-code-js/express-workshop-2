@@ -1,0 +1,20 @@
+{% if page.keywords %}
+<table class="reference">
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for keyword in page.keywords %}
+    <tr>
+      <td>{{keyword.term}}</td>
+      <td>{{keyword.define}}</td>
+    </tr>
+
+{% endfor %}
+
+  </tbody>
+</table>
+{% endif %}
