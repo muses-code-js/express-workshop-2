@@ -46,5 +46,11 @@ a.go-link {
 }
 
 code {
-  font-size: 14px;
+  font-size: inherit;
+}
+
+pre {
+  code {
+    font-size: 14px;
+  }
 }
