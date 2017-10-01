@@ -15,7 +15,7 @@ keywords:
     define: npm is a "package manager" for Node.js, meaning it allows you to easily install external modules (or chunks of code) published by others and use them in your project.
 
   - term: npm init
-    define: `npm init` is the command used to create a new `package.json` file.  By default it will prompt the user for information, but using the `-y` flag will cause it to use the default values for each.
+    define: The command used to create a new `package.json` file.  By default it will prompt the user for information, but using the `-y` flag will cause it to use the default values for each.
 
 ---
 
