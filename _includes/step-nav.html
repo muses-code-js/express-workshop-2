@@ -1,20 +1,17 @@
-{% assign default_paths = site.pages | map: "path" %}
-{% assign page_paths = site.header_pages | default: default_paths %}
+{% assign steps = site.steps | sort: "number" %}
 
 <div class="step-nav">
   <h3>Workshop Steps</h3>
   <ul>
-  {% for path in page_paths %}
-    {% assign my_page = site.pages | where: "path", path | first %}
-    {% if my_page.title and my_page.layout == "step" %}
-      <li class='{% if page.number == my_page.number %}active{% endif %}'>
-        <a href="{{ my_page.url | relative_url }}">
-          {% if my_page.number != "start" %}{{my_page.number}} - {% endif %}{{ my_page.title | escape }}
+  {% for step in steps %}
+      <li class='{% if page.number == step.number %}active{% endif %}'>
+        <a href="{{ step.url | relative_url }}">
+          {% if step.number != "start" %}{{step.number}} - {% endif %}{{ step.title | escape }}
         </a>
       </li>
-    {% endif %}
   {% endfor %}
   </ul>
+
   <h3>Useful Links</h3>
   <ul>
   <li><a target="_blank" href="https://github.com/node-girls/what-is-node">What is Node?</a></li>
