@@ -13,11 +13,11 @@ keywords:
     define: When added to the end of an `npm install` command, `--save` adds that npm package to the `package.json` file.
 
 ---
-In this workshop we are building a web server application. Node.js provides all the functionality to do this, but at a very fine-grained level.  You would need to make a lot of decisions about how to implement a server and then write that code and debug it.  It's a lot of work and it's also work that you have to do everytime you would write a web server application.  
+In this workshop we are building a web server application. Node.js provides all the functionality to do this, but at a very low level.  You would need to make a lot of decisions about how to implement a server and then write that code and debug it.  It's a lot of work and it's also work that you have to do everytime you would write a web server application.  
 
 Writing everything from scratch can be fun the first time, but quickly gets boring.  Wouldn't it be great if someone had already done all that work?
 
-Fortunately Node.js provides a way for publishing code.  People publish `packages` that solve particular common problems that they find themselves doing over and over.  So instead of you "re-inventing" the wheel everytime, you can use other people's packages and spend your time on what makes your application unique. The packages that you install and use in your application are called its `dependencies`.
+Fortunately Node.js provides a way to publish code.  People publish `packages` that solve particular common problems that they find themselves doing over and over.  So instead of you "re-inventing" the wheel everytime, you can use other people's packages and spend your time on what makes your application unique.  The packages that you install and use in your application are called its `dependencies`.
 
 You can find published packages on the NPM website, <https://www.npmjs.com/>.  It currently has a little over half a million packages available.
 
