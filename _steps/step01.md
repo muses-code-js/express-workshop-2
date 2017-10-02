@@ -9,10 +9,10 @@ keywords:
     define: A `package.json` is the file used to store information about a Node.js project, such as its name and its dependencies. Read more [here](https://docs.npmjs.com/files/package.json).
 
   - term: dependencies
-    define: Dependencies are external code modules that are required to run your project.
+    define: Dependencies are external code packages that are required to run your project.
 
   - term: npm
-    define: npm is a "package manager" for Node.js, meaning it allows you to easily install external modules (or chunks of code) published by others and use them in your project.
+    define: npm is a "package manager" for Node.js, meaning it allows you to easily install external packages (or chunks of code) published by others and use them in your project.
 
   - term: npm init
     define: The command used to create a new `package.json` file.  By default it will prompt the user for information, but using the `-y` flag will cause it to use the default values for each.
@@ -21,7 +21,7 @@ keywords:
 
 The first thing we do when starting a new Node.js project is create a `package.json` file.
 
-`package.json` is the configuration file used by the program `npm`, the **Node Package Manager**.  It is used it configure lots of things in your project including module  depedencies, automating tasks, and how to publish it as a module.  
+`package.json` is the configuration file used by the program `npm`, the **Node Package Manager**.  It is used it configure lots of things in your project including package depedencies, automating tasks, and how to publish it as a package.  
 
 However the only thing we are going to use it for in this workshop is defining dependencies.
 
@@ -58,6 +58,6 @@ Your file will look something like:
 }
 ```
 
-The syntax in this file is called **JSON** (pronounced like 'Jason') which is short for **Javascript Object Notation**. It's a way of representing Javascript data that is easy to read and write to and we use it a lot for saving and sending information.  We talk more about this in later steps.
+The syntax in this file is called **JSON** (pronounced like 'Jason') which is short for **Javascript Object Notation**. It's a way of representing Javascript data that is easy to read and write to and we use it a lot for saving and sending information.  We talk more about JSON in later steps.
 
 Now we have a `package.json` file, let's add a dependency.
