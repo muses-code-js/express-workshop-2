@@ -42,14 +42,15 @@ Our application is a web server.  The client is your web browser.  They use the 
 
 But enough talk.  Let's code!
 
+### 1. Create a server.js file
 
-## 1. Create a `server.js` file
+All of the code for our server is going to live in one file, `server.js`.  Create a new file called `server.js`.  
 
-Let's build our server! Before we do anything, let's create a new file called `server.js`. This is where all our server code is going to live.
+This is where all our server code is going to live.
 
-## 2. `require` the `express` library
+### 2. "require" the Express module
 
-We already installed Express in Step 2, but we need to make sure it is included in this file specifically so we can make use of its methods. In Node.js, when you want to access the functionality of a library or module in another file, you `require` it.
+We already installed Express in Step 2, but we need a way to refer to it so we can use it.  We do that using the function `require`.
 
 To import Express, write the following inside `server.js`:
 
@@ -57,9 +58,11 @@ To import Express, write the following inside `server.js`:
 var express = require('express');
 ```
 
-## 3. Initialise the server
+Now we have a variable `express` that points to whatever the Express module  exports.  We could have called this variable anything we wanted but it's common practice to use the same name.
 
-To initialise our server, we just need to call the `express()` function. This will create an Express application for us to work with.
+### 3. Create the server object
+
+The Express module exports a single function.  When we invoke that function it returns an Express application object.  That object provides the all the behaviour that we use to build our server.
 
 Add the second line of code to your `server.js` file:
 
@@ -68,25 +71,19 @@ var express = require('express');
 var app = express();
 ```
 
-## 4. Start 'listening' for potential requests
+### 4. Start our server "listening"
 
-One more step left, we need to set a **port** for our server to listen to. Think of a port as a door number; any requests that come to the server will come via that door. Setting a port will allow us to find where our server is running.
+Now we have our server object (`app`) we can use the `listen()` function to start it listening for requests.
 
-We use the **`app.listen`** method to do this. This method takes two arguments: a **port** and a **callback function** telling it what to do once the server is running. Need clarification? Read more about the `app.listen` method in the [Express documentation](http://expressjs.com/en/4x/api.html#app.listen).
+The `listen()` function takes two arguments: a **port** number and a **callback function**.
 
-We're going to run our server on port `3000` (`8080` if you are using cloud9), and run a simple `console.log` as our callback function. Update your `server.js` file, calling the `app.listen` method as follows:
+Think of the port number as a door number or apartment number.  Requests for this server will be sent "to that port". Every server running on the same computer must be listening on a different port.
 
-if you are using a local environment:
-```js
-var express = require('express');
-var app = express();
+If you are using Cloud9, then you need to use port `8080`.  If you are using a local Node.js on your own machine, then use port `3000`.
 
-app.listen(3000, function () {
-  console.log('Server is listening on port 3000. Ready to accept requests!');
-});
-```
+The callback function is code for the server to run immediately after it starts listening.  We are going to use it to just display a message to let us known that it's happened.
 
-And if you are using cloud9:
+**If you are using cloud9:**
 ```js
 var express = require('express');
 var app = express();
@@ -96,13 +93,22 @@ app.listen(8080, function () {
 });
 ```
 
-## 5. Switch the server on!
+**If you are using a local environment:**
+```js
+var express = require('express');
+var app = express();
+
+app.listen(3000, function () {
+  console.log('Server is listening on port 3000. Ready to accept requests!');
+});
+```
+
+
+## 5. Start it up
 
 You've built your server, but it isn't running yet.
 
-if you are using a local environment:
-
-We need to run a command in the terminal to do this. We are going to use the `node` keyword to run the server file.
+To start our Node.js program we run the `node` program and tell it to run our program.
 
 Type the following command in your terminal (or the cloud9 terminal):
 
@@ -110,9 +116,10 @@ Type the following command in your terminal (or the cloud9 terminal):
 $ node server.js
 ```
 
-if you are using cloud9, you can also select the file `server.js` in the workspace folder tree and click the `Run` button on the top menu.
+If you are using cloud9, you can also select the file `server.js` in the workspace folder tree and click the `Run` button on the top menu.
 
-
-If you see this, congratulations! :clap: :clap: You have built yourself a server!
+In the terminal you should see the following message displayed in you terminal:
 
 ![success](https://raw.githubusercontent.com/node-girls/workshop-cms/master/readme-images/step2-server02.png)
+
+If you see this, congratulations! :clap: :clap: You have built yourself a server and started it running!
