@@ -28,21 +28,20 @@ keywords:
 
 ---
 
+Now that we have `express` installed you probably want to get on with building our server.  But first lets talk briefly about what a server is.
 
-The first thing we need to do is build our server. You will always need to build a server when writing back-end code. A server can be built in pure Node.js, but Express gives us simpler syntax to work with.
+A **server** is a computer program. Its job is to send and receive data.
 
-## What is a server?
+A server "listens" on the network for requests sent to it from other programs that we call **clients**.  Depending on the request the server may perform some kind of work and then send some kind of response back to the client.  The request might be for some specific information that the server looks up in a database and then sends back as the response.  The response might just an error message like the famous *'Error 404: File not found.'*  
 
-Servers are computer programs that receive requests from other programs, the *clients* and send back a response e.g share data, information or hardware and software resources.
+This idea of having client programs that make requests from server programs is called a **client/server architecture**.  It works because both the clients and the servers use the same format for the requests and responses.  This agreed upon format is called the **protocol**.
 
-### ...and what is a server in plain English?
-
-A server is a computer program. Its job is to send and receive data.
-
-Let's take a website for example.  A website is just a collection of HTML and CSS files, images, maybe some javascript files. When you type a website address in your browser's address bar, the browser (client) sends a **request** to the server that lives at that address. The browser asks the server to give it the files it needs to display the website properly.
-
+Our application is a web server.  The client is your web browser.  They use the `http` protocol to communicate.  The browser sends requests to the server using URLs to indicate what it wants from the server.
 
 ![Server flow](https://files.gitter.im/heron2014/FiiK/server.png)
+
+But enough talk.  Let's code!
+
 
 ## 1. Create a `server.js` file
 
