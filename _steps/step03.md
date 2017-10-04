@@ -20,14 +20,11 @@ keywords:
   - term: require()
     define: "`require()` is used in Node.js to import functionality from another file or an external module."
 
-  - term: module
-    define: A module is a bit of reusable code, written by you or someone else, that can be imported into a Node.js project using require.
-
   - term: method
     define: Method is another name for a function.
 
   - term: port
-    define: A port is a number that serves as an endpoint, determining where you can access your web application.
+    define: A port is a number that is used to identify each server running on a single machine.  Each running server on a machine must use it's own port number.  Port numbers start at 0 and go up to 65535.  The ports 0 to 1023 are reserved for specific services and require administrative permissions to use.
 
 ---
 
