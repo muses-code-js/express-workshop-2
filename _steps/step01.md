@@ -25,6 +25,8 @@ The first thing we do when starting a new Node.js project is create a `package.j
 
 However the only thing we are going to use it for in this workshop is defining dependencies.
 
+## Creating a new package.json file
+
 To create your new `package.json` file:
 
 1. Open your terminal
