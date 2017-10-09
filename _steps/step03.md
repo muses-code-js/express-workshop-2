@@ -42,83 +42,80 @@ Our application is a web server.  The client is your web browser.  They use the 
 
 But enough talk.  Let's code!
 
-### 1. Create a server.js file
+## Creating server.js
 
-All of the code for our server is going to live in one file, `server.js`.  Create a new file called `server.js`.  
+All of the code that we are going to write in this tutorial will go in one file,
+`server.js`.  
 
-This is where all our server code is going to live.
+We will now create that file and write the code to start the server running.
 
-### 2. "require" the Express module
+1. **Create a server.js file**
 
-We already installed Express in Step 2, but we need a way to refer to it so we can use it.  We do that using the function `require`.
+    Create a new file called `server.js`.  You can do this using the `File` menu in Cloud9.  Once created you will see it listed in the file view.  Double-click on it to open it in an editor.  It should be completely empty.
 
-To import Express, write the following inside `server.js`:
+2. **Import the Express module**
 
-```js
+    We already installed Express in Step 2, but we need a way to refer to it in our code so we can use it.  We do that using the function `require`.  
+
+    To import Express, write the following at the top of `server.js`:
+
+    ```javascript
 var express = require('express');
-```
+    ```
 
-Now we have a variable `express` that points to whatever the Express module  exports.  We could have called this variable anything we wanted but it's common practice to use the same name.
+    Now we have a variable `express` that points to whatever the Express module  exports.  We could have called this variable anything we wanted but it's common practice to use the same name.
 
-### 3. Create the server object
+3. **Create the server object**
 
-The Express module exports a single function.  When we invoke that function it returns an Express application object.  That object provides the all the behaviour that we use to build our server.
+    The Express module exports a single function.  When we **invoke** that function it returns an Express application object.  That object provides the all the behaviour that we use to build our server.
 
-Add the second line of code to your `server.js` file:
+    Add the second line of code to your `server.js` file:
 
-```js
-var express = require('express');
-var app = express();
-```
-
-### 4. Start our server "listening"
-
-Now we have our server object (`app`) we can use the `listen()` function to start it listening for requests.
-
-The `listen()` function takes two arguments: a **port** number and a **callback function**.
-
-Think of the port number as a door number or apartment number.  Requests for this server will be sent "to that port". Every server running on the same computer must be listening on a different port.
-
-If you are using Cloud9, then you need to use port `8080`.  If you are using a local Node.js on your own machine, then use port `3000`.
-
-The callback function is code for the server to run immediately after it starts listening.  We are going to use it to just display a message to let us known that it's happened.
-
-**If you are using cloud9:**
-```js
+    ```javascript
 var express = require('express');
 var app = express();
+    ```
 
-app.listen(8080, function () {
-  console.log('Server is listening on port 8080. Ready to accept requests!');
-});
-```
+    This new line invokes the `express()` from and stores the result in the variable `app`.
 
-**If you are using a local environment:**
-```js
-var express = require('express');
-var app = express();
+4. **Start our server "listening"**
 
-app.listen(3000, function () {
-  console.log('Server is listening on port 3000. Ready to accept requests!');
-});
-```
+    Now we have our server object (`app`) we can use its `listen()` function to start it listening for requests.
 
+    The `listen()` function takes two arguments: a **port** number and a **callback function**.
 
-## 5. Start it up
+    The **port number** can be thought of as a door number or apartment number.  Requests for this server will be sent "to that port". Every server running on the same computer must be listening on a different port.
+
+    Cloud9 only allows you to use port `8080`.  If you are running Node.js on your own machine you can use any port between `1023` and `65535`.  We will use port `8080`.
+
+    The **callback function** is a function for the server to run immediately after it starts listening.  We are going to use it to just display a message to let us known that the server started listening.
+
+    Add the last three lines to `server.js`:
+
+    ```javascript
+    var express = require('express');
+    var app = express();
+
+    app.listen(8080, function () {
+      console.log('Server has started listening on port 8080. ');
+    });
+    ```
+
+## Start it up
 
 You've built your server, but it isn't running yet.
 
-To start our Node.js program we run the `node` program and tell it to run our program.
+To run a Node.js program we use the `node` program.
 
-Type the following command in your terminal (or the cloud9 terminal):
+Type the following command in the Cloud9 terminal in the same directory as `server.js` and press ENTER:
 
 ```
-$ node server.js
+node server.js
 ```
 
-If you are using cloud9, you can also select the file `server.js` in the workspace folder tree and click the `Run` button on the top menu.
+<!-- If you are using cloud9, you can also select the file `server.js` in the workspace folder tree and click the `Run` button on the top menu. -->
 
-In the terminal you should see the following message displayed in you terminal:
+In the terminal you should see the following message displayed in your terminal:
 
 ![success](https://raw.githubusercontent.com/node-girls/workshop-cms/master/readme-images/step2-server02.png)
 
