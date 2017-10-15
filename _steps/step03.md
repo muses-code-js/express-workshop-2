@@ -26,19 +26,24 @@ keywords:
   - term: port
     define: A port is a number that is used to identify each server running on a single machine.  Each running server on a machine must use it's own port number.  Port numbers start at 0 and go up to 65535.  The ports 0 to 1023 are reserved for specific services and require administrative permissions to use.
 
+  - term: invoke
+    define: "*Invoking* or *calling* a function means to tell the function to run it's code."
+
 ---
 
-Now that we have `express` installed you probably want to get on with building our server.  But first lets talk briefly about what a server is.
+Since we are going to be building a server, we should probably talk about what a server *is*.
 
-A **server** is a computer program. Its job is to send and receive data.
-
-A server "listens" on the network for requests sent to it from other programs that we call **clients**.  Depending on the request the server may perform some kind of work and then send some kind of response back to the client.  The request might be for some specific information that the server looks up in a database and then sends back as the response.  The response might just an error message like the famous *'Error 404: File not found.'*  
-
-This idea of having client programs that make requests from server programs is called a **client/server architecture**.  It works because both the clients and the servers use the same format for the requests and responses.  This agreed upon format is called the **protocol**.
-
-Our application is a web server.  The client is your web browser.  They use the `http` protocol to communicate.  The browser sends requests to the server using URLs to indicate what it wants from the server.
+A **server** is a computer program that provides some kind of functionality to other programs (called **clients**). The client and server programs are often (but not always) running on different computers.  We often also refer to the computer that the server software is running on as a server too.
 
 ![Server flow](https://files.gitter.im/heron2014/FiiK/server.png)
+
+A server "listens" for requests sent to it from clients.  Depending on the request the server may perform some kind of work and then send a response back to the client.  For example, client might send a request for information that the server looks up in a database and then sends back as the response.  If the server cannot fulfil the request for some reason then the response could be an error message like the famous *'Error 404: File not found.'*  
+
+This idea of having server programs that respond to requests from server programs is called a **client/server architecture**.  It works because both the clients and the servers use the same format for the requests and responses.  This agreed upon format is called the **protocol**.
+
+Client/server architecture is used when you have a resource that you need multiple different users to access at the same time.  Instead of sending the resource to all the users (eg. on a CDROM) you keep the resource on in one place and use a server to allow clients to access it.  There are many benefits to doing this including (but not limited to) the ease of updating the shared resource.
+
+The application we are creating is a **web server**.  The client is your web browser.  They use the `http` protocol to communicate.  The browser sends requests to the server using URLs to indicate what it wants from the server.
 
 But enough talk.  Let's code!
 
@@ -63,7 +68,7 @@ We will now create that file and write the code to start the server running.
 var express = require('express');
     ```
 
-    Now we have a variable `express` that points to whatever the Express module  exports.  We could have called this variable anything we wanted but it's common practice to use the same name.
+    Now we have a variable `express` that points to whatever the Express package  exports.  We could have called this variable anything we wanted but it's common practice to use the same name as the package.
 
 3. **Create the server object**
 
@@ -115,8 +120,10 @@ node server.js
 
 <!-- If you are using cloud9, you can also select the file `server.js` in the workspace folder tree and click the `Run` button on the top menu. -->
 
-In the terminal you should see the following message displayed in your terminal:
+In the terminal you will see it display the "Server has started listening" message.
 
-![success](https://raw.githubusercontent.com/node-girls/workshop-cms/master/readme-images/step2-server02.png)
+It will look a little like this:
+
+![image-title-here](../assets/step3-b.png){:class="img-responsive"}
 
 If you see this, congratulations! :clap: :clap: You have built yourself a server and started it running!
