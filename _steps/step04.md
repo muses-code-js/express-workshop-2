@@ -36,75 +36,107 @@ keywords:
 
 ---
 
-### What is a handler function?
+So our Express `app` object is listening for requests, but how will it know which requests to respond to and what to do when it does?
 
-When a request reaches the server, we need a way of responding to it. In comes the handler function. The handler function is just a function which receives requests and handles them, hence the name.
+To do this Express keeps a list of items called 'routes'.  
 
-The handler function always takes a `request` and `response` object, and sends the response back to the client along with some information. You can decide what to send back in your response.
+Each route has three components:
 
-### What does a handler function look like in Express?
+1. A HTTP **request method**
+2. An **URL path**
+3. A **handler function**
 
-The `get()` method is used to define a handler function in Express. It takes two parameters: the **endpoint** at which to trigger an action (we'll explain more about this in the next step), and the handler function that tells it exactly what to do. Here's a simple "Hello World!" example:
+When the server receives a request, it looks at the request's URL and request method.  If it has a route that matches both then it reponds to the request by running that route's function.
 
-```js
-app.get("/", function (req, res) {
-    res.send("Hello World!");
-});
-```
+This process is called "routing" the request.  
 
- Here, we are telling our server to respond with "Hello World!" when someone tries to access the webpage.
+We add routes to our server to tell it which requests to respond to, and what to do for the response in each case.
 
-## 1. Create your own handler function.
+## Adding a Route
 
-We are now making a handler function with a custom message in our response. You can write any message you want.
+To add routes, Express has a different route function for each **request method**.  Before starting the server listening, you simply call the appropriate route function with the parameters of the **URL** and your **handler function**.  You have to add each route before you start the server listening.
 
-Update your `server.js` file with an empty `app.get()` function:
+So let's see one in action.
 
+Update `server.js` like so:
 
-```js
-var express = require("express");
+```javascript
+var express = require('express');
 var app = express();
 
-app.get("/", function (req, res) {
-
+app.get("/hello", function (request, response) {
+  response.send("Hello World!");
 });
 
-app.listen(3000, function () {
-  console.log("Server is listening on port 3000. Ready to accept requests!");
+app.listen(8080, function () {
+  console.log('Server has started listening on port 8080. ');
 });
 ```
 
-Try to `console.log` the `req` object inside the handler function. Restart your server, refresh the browser, then go to your terminal to see what it looks like. You should see a lot of data come through.
+So as before, but we've added a route for `/hello` which will just send the simple text response of 'Hello World!' back.
 
-## 2. Tell your handler function what to do
+Make sure your changes to `server.js` are saved.
 
-We want our handler function to send back a message to the client. To do that, we're going to use the Express `send()` method. This will update the response object with the message.
+Now in your terminal press `ctrl + c` to stop your server running and run your server again with `node server.js`.
 
-Update your handler function like so:
+You will see the "Server is listening" message again.
 
-```js
-var express = require("express");
+So now that it's running, how do we send a GET request to it?  By using our trusty web browser of course.
+
+Open a new browser window or tab and type in the address below, replacing **USERNAME** with your Cloud9 username and **WORKSPACE** with the name of your workspace:
+
+<pre><code>https://<b>WORKSPACE</b>-<b>USERNAME</b>.c9.io:8080/hello</code></pre>
+
+Then press ENTER and you should see the "Hello World!" message displayed in your browser like a webpage.
+
+[INSERT SCREENSHOT]
+
+Everytime you request a webpage in your browser, it is doing a GET request.  Sending GET requests is probably the most common daily activity in the world today.  :smile:
+
+## Looking more closely at handler functions
+
+The second parameter we supplied for the route was a **handler function**.
+
+A handler function is just a regular Javascript function which `app` will invoke when it matches that route.  `app` passes two parameters to it as well: one that contains the request data, and one to use to send a response.
+
+Let's look at the handler function from the `/hello` route above:
+```javascript
+function (request, response) {
+  response.send("Hello World!");
+}
+```
+
+`request` contains all the information about the request that matched this route.  We don't use it in this example.  There is a massive amount of information in `request` and we will talk about this more in step #7.
+
+`response` is what we use to send a response back to the client.  It has several different functions that we can ue to do this.  In this example we used `response.send()`.
+
+Exactly what steps you perform in each handler will depend on your application and the specific route that it belongs to.
+
+## Try it yourself
+
+Now you know a little more about routes and handler functions, try adding this new route yourself.
+
+Here's what you need to know:
+
+ * request method is `get`
+ * the URL endpoint is `/chocolate`
+ * the reponse should be `Mmmm, chocolate ...`
+
+Test it by going to `https://WORKSPACE-USERNAME.c9users.io:8080/chocolate` in your browser.
+
+
+Check the solution below if you get stuck.
+
+```javascript
+var express = require('express');
 var app = express();
 
-app.get("/", function (req, res) {
-  res.send("Yay Node Girls!");
+app.get("/chocolate", function (request, response) {
+  response.send("Mmmm, chocolate ...");
 });
 
-app.listen(3000, function () {
-  console.log("Server is listening on port 3000. Ready to accept requests!");
+app.listen(8080, function () {
+  console.log('Server has started listening on port 8080. ');
 });
 ```
-
-## 3. Check it out in your browser
-
-If you are using a local environment or the cloud9 terminal to run your code, quit your server in the terminal with `ctrl + c`. Then restart it to run your new changes.
-
-```
-$ node server.js
-```
-Or if you are using the `Run` button in cloud9, click the `Restart` (or `Stop` and then `Run`) button in the Run Panel.
-
-Now open your favourite browser (we like Chrome), and for your local environment, navigate to `http://localhost:3000`.
-Otherwise for cloud9, click the `Preview` button on the top menu, you will see a browser is opened inside cloud9.
-
-If you see your message in the browser, congratulations! You just sent your first response from the server.
+{: .solution }
