@@ -7,17 +7,34 @@ permalink: step04/
 keywords:
   - term: handler function
     define: A function that receives requests and tells the server how to respond to them.
+
+  - term: URL Path
+    define: |
+      The part of the URL that comes after the hostname (and port if specified). It indicates the specific resource that the request relates to.
+
+      E.g. `http://example.com/foods/chocolate` the path is `/foods/chocolate`.  
+
+      E.g. `http://example.com` the path is `/`.
+
   - term: endpoint
-    define: "The part of the URL which comes after `/`. For example: `/chocolate` is the 'chocolate' endpoint."
+    define: A URL path that your server will respond to requests on.
+
+  - term: routing
+    define: The process of determining how to respond to a request on a given endpoint.
+
   - term: get()
-    define: "The Express method used to set up a handler function in Express. Takes two parameters: the endpoint, and the handler function."
+    define: "One of the Express functions used to add routes in Express. Takes two parameters: the URL path, and the handler function."
+
   - term: send()
     define: The Express method used to send information back to the client from the server. Updates the response object.
 
+  - term: HTTP Request Methods
+    define: |
+      A request method is a hint to the server from the client about the expected type of response.  There are nine different methods, the most commonly used are GET and POST.
+
+      <https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods>
+
 ---
-
-
-Now that we've built the server, we need to communicate with it. We're going to control the server with **handler functions**.
 
 ### What is a handler function?
 
