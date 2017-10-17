@@ -21,7 +21,7 @@ keywords:
     define: "`require()` is used in Node.js to import functionality from another file or an external module."
 
   - term: method
-    define: Method is another name for a function.
+    define: Method is another name for a function.  Don't get it confused with **request method**.
 
   - term: port
     define: A port is a number that is used to identify each server running on a single machine.  Each running server on a machine must use it's own port number.  Port numbers start at 0 and go up to 65535.  The ports 0 to 1023 are reserved for specific services and require administrative permissions to use.
