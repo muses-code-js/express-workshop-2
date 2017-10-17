@@ -127,7 +127,10 @@ Here's what you need to know:
  * the endpoint is `/chocolate`
  * the reponse should be `Mmmm, chocolate ...`
 
-Test it by going to `https://WORKSPACE-USERNAME.c9users.io:8080/chocolate` in your browser.
+Test it by going to in your browser:
+
+ * For Cloud9: `https://WORKSPACE-USERNAME.c9users.io:8080/chocolate`
+ * For local: `https://localhost:8080/chocolate`
 
 
 Check the solution below if you get stuck.
