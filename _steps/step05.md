@@ -1,38 +1,31 @@
 ---
 layout: step
 number: 5
-title: Routing
+title: Serving static files
 permalink: step05/
-
-keywords:
-
-  - term: routing
-    define: The definition of application endpoints and how they respond to client requests.
-
 ---
 
-At the moment our server only does one thing. When it receives a request from the `/` endpoint, it sends back the same response: "Yay Node Girls!".
+So we know how to send back a simple message. But what if you want to send back a whole HTML page, or an image?
 
-However by making use of endpoints, we can make the server send different responses for different requests. This concept is called **routing**.
+Things like HTML files, images etc are known as **static assets**. If you want your server to "serve" static assets back to the browser, you need to do something different than just using the `res.send()` method.
 
-### What is an endpoint?
+To be able to send any file from the server we need a special, built-in **middleware** function that comes with Express: `express.static()`. Read more about it [here](http://expressjs.com/en/starter/static-files.html).
 
-An endpoint is the part of the URL which comes after `/`. For example: `/chocolate` is the "chocolate" endpoint. It's the URL to which you send a request.
-
-## 1. Create your own endpoints and send different responses
-
-We're going to try sending different responses at different endpoints. Remember the `app.get()` method? To set up routing in your server, we just need to repeat this method with different endpoints.
-
-For example:
+Say we want to serve all the static assets in our "public" folder. The `express.static()` function will look like this:
 
 ```js
-app.get("/", function (req, res) {
-    res.send("Hello World!");
-});
-
-app.get("/chocolate", function (req, res) {
-    res.send("Mm chocolate :O");
-});
+app.use(express.static("public"));
 ```
 
-*Challenge:* Add some code so that your server sends one message when the endpoint is `/node` and another one when it's `/girls`.
+## 1. Serve static files from your server
+
+Delete all your `app.get` endpoint functions, and replace them with the line of code above. Restart your server, refresh your browser and see what happens! If you see a `Node Girls` page, then your static assets have been successfully served.
+
+### [Go to Step 7](step07.md)
+
+| Keyword | Explanation |
+|--------|:-------------------------------:|
+| static assets | Files such as HTML, CSS and JavaScript documents or images that you want to appear in the browser. |
+| middleware | A function (or functions) that are invoked by Express before your final request handler is executed. Middleware sits between a raw request and its final intended route. |
+| `use()` | The method that tells Express to use a certain piece of middleware. |
+| `express.static()` | The built-in Express middleware function that makes it possible to serve static assets. |
