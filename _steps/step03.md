@@ -41,7 +41,7 @@ A server "listens" for requests sent to it from clients.  Depending on the reque
 
 This idea of having server programs that respond to requests from server programs is called a **client/server architecture**.  It works because both the clients and the servers use the same format for the requests and responses.  This agreed upon format is called the **protocol**.
 
-Client/server architecture is used when you have a resource that you need multiple different users to access at the same time.  Instead of sending the resource to all the users (eg. on a CDROM) you keep the resource on in one place and use a server to allow clients to access it.  There are many benefits to doing this including (but not limited to) the ease of updating the shared resource.
+Client/server architecture is used when you have a resource that you need multiple different users to access at the same time.  Instead of sending the resource to all the users (eg. on a CDROM) you keep the resource on in one place and use a server to allow clients to access it.  There are many benefits to doing this like how easy it is to update the shared resource.
 
 The application we are creating is a **web server**.  The client is your web browser.  They use the `http` protocol to communicate.  The browser sends requests to the server using URLs to indicate what it wants from the server.
 
@@ -72,7 +72,7 @@ var express = require('express');
 
 3. **Create the server object**
 
-    The Express module exports a single function.  When we **invoke** that function it returns an Express application object.  That object provides the all the behaviour that we use to build our server.
+    The Express module exports a single function.  When we **invoke** that function it returns an **Express application** object.  That object provides the all the behaviour that we use to build our server.
 
     Add the second line of code to your `server.js` file:
 
