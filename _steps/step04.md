@@ -16,11 +16,14 @@ keywords:
 
       E.g. `http://example.com` the path is `/`.
 
+  - term: route
+    define: The mapping between a **URL path**, a **request method** and a **handler function**.
+
   - term: endpoint
-    define: A URL path that your server will respond to requests on.
+    define: A **URL path** which corresponds to a particular route.   
 
   - term: routing
-    define: The process of determining how to respond to a request on a given endpoint.
+    define: The process of determining how to respond to a request on a given **endpoint**.
 
   - term: get()
     define: "One of the Express functions used to add routes in Express. Takes two parameters: the URL path, and the handler function."
@@ -30,7 +33,7 @@ keywords:
 
   - term: HTTP Request Methods
     define: |
-      A request method is a hint to the server from the client about the expected type of response.  There are nine different methods, the most commonly used are GET and POST.
+      A request method is a hint to the server from the client about the expected type of response.  There are nine different methods but the most commonly used are GET and POST.
 
       <https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods>
 
@@ -43,7 +46,7 @@ To do this Express keeps a list of items called 'routes'.
 Each route has three components:
 
 1. A HTTP **request method**
-2. An **URL path**
+2. An **URL path** (AKA **endpoint**)
 3. A **handler function**
 
 When the server receives a request, it looks at the request's URL and request method.  If it has a route that matches both then it reponds to the request by running that route's function.
