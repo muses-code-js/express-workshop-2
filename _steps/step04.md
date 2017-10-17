@@ -51,15 +51,17 @@ Each route has three components:
 
 When the server receives a request, it looks at the request's URL and request method.  If it has a route that matches both then it reponds to the request by running that route's function.
 
-This process is called "routing" the request.  
+This process of matching a request to the right **handler function** is called "routing".  
 
 We add routes to our server to tell it which requests to respond to, and what to do for the response in each case.
 
 ## Adding a Route
 
-To add routes, Express has a different route function for each **request method**.  Before starting the server listening, you simply call the appropriate route function with the parameters of the **URL** and your **handler function**.  You have to add each route before you start the server listening.
+Express has a function for each **request method** for adding routes.
 
-So let's see one in action.
+To add a route, you call the appropriate function with the parameters of the **URL** and your **handler function**.  
+
+Let's see adding a GET route in action.
 
 Update `server.js` like so:
 
@@ -76,7 +78,7 @@ app.listen(8080, function () {
 });
 ```
 
-So as before, but we've added a route for `/hello` which will just send the simple text response of 'Hello World!' back.
+So as before, but we've added a route for GET requests to the `/hello` endpoint which just sends the simple text response of 'Hello World!' back.
 
 Make sure your changes to `server.js` are saved.
 
@@ -122,7 +124,7 @@ Now you know a little more about routes and handler functions, try adding this n
 Here's what you need to know:
 
  * request method is `get`
- * the URL endpoint is `/chocolate`
+ * the endpoint is `/chocolate`
  * the reponse should be `Mmmm, chocolate ...`
 
 Test it by going to `https://WORKSPACE-USERNAME.c9users.io:8080/chocolate` in your browser.
