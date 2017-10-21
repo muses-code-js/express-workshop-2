@@ -17,9 +17,9 @@
     $('div.solution').each( function(){
       $(this).prepend('<h5 class="toggle hiding"><i class="fa fa-chevron-up" aria-hidden="true"></i> Click to <span class="action"></span> solution</h5>');
     });
-    $('div.solution pre.highlight').addClass('hidden');
+    $('div.solution .highlight').addClass('hidden');
     $('h5.toggle').click(function(e){
-      $(this).parent().children('pre.highlight').slideToggle('show');
+      $(this).parent().children('.highlight').slideToggle('show');
       $(this).toggleClass('showing');
       $(this).toggleClass('hiding');
       $(this).children('i.fa').toggleClass('fa-chevron-up');
