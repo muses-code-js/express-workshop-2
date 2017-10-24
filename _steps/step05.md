@@ -52,3 +52,17 @@ This line tells `app` to use the `express.static()` middleware function and to p
 This means that whenever a GET request is received by our app it will first check in `public` to see if there is a file that matches the URL of the request.  If it finds one then it sends that file back as the reponse.
 
 It's a really good example of how Express can save you a lot of time.
+
+If you are having problems getting it to work check the solution below:
+
+```javascript
+var express = require('express');
+var app = express();
+
+app.use('express.static('public')');
+
+app.listen(8080, function () {
+  console.log('Server has started listening on port 8080. ');
+});
+```
+{: .solution }
