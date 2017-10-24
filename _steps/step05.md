@@ -24,21 +24,24 @@ Now that we've seen the basics of routing & how to create an endpoint to to send
 
 When using our app, you are going to use the web page as the user interface.  Which means our server is going to have to serve up that page.  So how are we going to do that?
 
-Well you could add a route for `/`, with a handler that opens `public/index.html` and sends it as the response. But you would have to create one for every file.  And everytime you added a file, or renamed one you would have more work to do.  That sounds really fiddly and error prone.  
+You could add a route for `/`, with a handler that opens `public/index.html` and sends it as the response. But you would have to create one for every file.  And everytime you added a file, or renamed one you would have more work to do.  That sounds really fiddly and error prone.  
 
-Lucky for us, Express provides a **middleware** function to handle this situation: `express.static()`.  Middleware functions are like special **handler functions** that run *before* our routes are processed.  
+Lucky for us, Express provides a **middleware** function to handle this situation: `express.static()`.  Middleware functions are like special **handler functions** that run on every request *before* our routes are processed.  
 
 ## Serving our static assets
 
 All of the static assets for our app are in the `public` folder.  We are going to use `express.static()` to serve them.
 
 1. Delete any of the routes you added in the previous step.  We aren't going to use them in our app.
-2. Add the following line of code *after* the line w.
+2. Add the following line of code *after* the line with `var app = express();`.
 
     ```javascript
 app.use(express.static("public"));
     ```
-3. Restart your server, go to `https://WORKSPACE-USERNAME.c9users.io:8080` in your browser.
+3. Restart your server, go to your app in your browser.
+
+    * For Cloud9: `https://WORKSPACE-USERNAME.c9users.io:8080/`
+    * For local: `https://localhost:8080/`
 
  If you see a `Node Girls` page, then your static assets have been successfully served.
 
