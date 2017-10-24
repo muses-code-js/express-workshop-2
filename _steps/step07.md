@@ -1,7 +1,7 @@
 ---
 layout: step
 number: 7
-title: Sending your blog post to your server
+title: Saving New Posts (1/4)
 permalink: step07/
 
 keywords:
@@ -16,97 +16,115 @@ keywords:
 
 ---
 
+Now that we can display our posts, the next part is creating new ones.
 
-So far we have been requesting data from our server.  But we can also *send* data to the server to be stored somewhere.  
+How this is expected to work is that we will type something into the textbox in the page, click "POST" and your content will be saved on the server and displayed in the page.  
 
-### HTTP request methods
-All requests use one of the HTTP methods. The main ones are: `GET, POST, PUT, DELETE`.
+Much like the previous step, in order to make that work we will have to implement the appropriate endpoint with the behaviour that the page expects.
 
+This endpoint has the following requirements:
 
-`app.get` deals with requests that use the `GET` HTTP method.  
+1. Endpoint URL: `/create-post`
+2. Request Method: `POST`
 
-### The `POST` http request method
+However this behaviour is relatively complicated compared to the previous one:
 
-When sending data to the server, we use the `POST` http request method, instead of `GET`.  To understand the difference, follow the "POST vs GET" link in the keywords section below.
+1. Post content will be sent as form field `blogpost`
+2. New post is to be added to existing posts in `posts.json` using current timestamp as its property name & saved to disk
+3. New post entry should be sent back as response.
 
-Let's try `POST`ing some text to the server.
+There's quite a bit to cover here, so we are going to split this one up over a four steps.  For the first one, we will just create the endpoint and extract our content.
 
-We're going to add a form to the `index.html` page, so that you can write your blogposts from there.
+## The /create-post endpoint
 
-Open up the `index.html` file in your text editor.  If you have a look, you should see this:
+So far all of the endpoints you have created have been for the `GET` request method because you have been requesting data from the server.  However this time you will be sending new data to the server for it to save so we will use the `POST` request method.  
 
-```html
-<div class="entry-container post">
-  <!--PASTE YOUR CODE HERE!! -->
-  <div class="clearfix"></div>
-</div>
-```
+Add the following to `server.js`:
 
-**Replace the greyed-out comment with this code snippet:**
+```javascript
+app.post('/create-post', function(request, response){
 
-```html
-<form action="/create-post" method="POST">
-  <textarea name="blogpost" rows="5" placeholder="Write something cool, insightful, or funny here."></textarea>
-  <button type="submit">Post</button>
-</form>
-```
-
-* This form has a text area and a Send button.  
-* The `action` attribute is the endpoint form data will be sent to.
-* The `name` attribute will be used later to reference the data.
-
-When you hit Send, the form will send a `POST` request to the server, using whatever is in the `action` attribute as the endpoint.  In our case it's `/create-post`.
-
-### Receiving the blog post on the server
-
-* Data doesn't come through the server in one go; it flows to the server in a **stream**.  Think of a stream as water flowing from a tap into a bucket.  Your job is to collect this water in the server.
-
-* If we were writing a pure Node server, we would have to think about how to collect the stream of data properly.  But luckily for us, Express handles all of that stuff under the hood.  
-
-* All you need to do is define a route to deal with requests that come through on the `/create-post` endpoint.
-
-Let's remind ourselves of a simple `GET` route in Express:
-```js
-app.get('/my-lovely-endpoint', function (req, res) {
-    res.send('Hello there!');
 });
 ```
 
-This time we want to define a route to deal with a `POST` request.  What do you think you would need to do differently?  Experiment and see if you can define a route for the `/create-post` endpoint!
+## Extracting our post
 
-For now, make your `/create-post` handler simply do this: `console.log('/create-post')`.
+Your new post content from the text box is sent in the request as "form data".  This makes it difficult to extract.  However someone has written a nice package called `express-formidable` for extracting form data.
 
----
+Install `express-formidable` using NPM with this command.  This is exactly the same as when you installed `express`.
 
-### Extracting the blog post
-
-Now the contents of your blogpost is hidden in your `req` object somewhere.  Normally you would extract it using `req.body`.  Try to console.log `req.body` now.
-
-Getting `undefined`?  Not to worry, that's normal.  When data has been `POST`ed to the server as `FormData`, we need to do things slightly differently to access the data that's come through in the request.
-
-We need another middleware function.  Something that can get extract the contents out of the special `FormData` object.  For this we will use `express-formidable`.  `express-formidable` is another Express middleware. It will extract the form data from the request and make it available to you when you do `req.fields`.
-
-This time though, `express-formidable` is not built-in, we need to explicitly install it.
-
-**In your terminal, install express-formidable**
-```bash
+```
 npm install express-formidable --save
 ```
 
-`require` `express-formidable` so you can use it in your code.  You can't use dashes in JavaScript variable names, so just call it `var formidable`.
-```js
+Once it is installed import at the top of `server.js` using `require`.  
+
+```javascript
 var formidable = require('express-formidable');
 ```
 
-Now add this towards the top of your server, after your `require`s and `app.use(express.static('public'))`, but before your `/create-post` endpoint:
-```js
+This time we didn't use exactly the same name as the package.  This is because you can't use `-` in a variable name.
+
+`express-formidable` is a middleware function, like `express.static()`.  So we have to tell our `app` object to use it.
+
+Add the following line to `server.js` after your `app.use(express.static())` line and before your endpoints.
+
+```javascript
+app.use(formidable());
+```
+
+Sometimes the order that middlware functions are added with `app.use()` is important.  This depends on the middleware functions you are using. In this case, `express-formidable` must be added *after* `express.static()`.  
+
+What `express-formidable` does is automatically extract form data from the request, and add it back as an easy to use object called `fields`.
+
+To verify that it is working, add a `console.log` statement to your **handler function** to log this object.
+
+```javascript
+app.post('/create-post', function(request, response){
+  console.log(request.fields);
+});
+```
+
+Test this by:
+
+1. Make sure `server.js` is saved.
+2. Stop and start the server again.
+3. Go to the app in your browser, type something in the box and click POST.
+
+In your terminal you should see your post logged:
+
+[INSERT SCREENSHOT]
+
+If it isn't working for you, you can double-check that your code is right with the solution below:
+
+```javascript
+var express = require('express');
+var formidable = require('express-formidable');
+var fs = require('fs');
+
+var app = express();
+
+app.use(express.static('public'));
 app.use(formidable());
 
-```
-Now inside your `/create-post` function, add:
-```js
-console.log(req.fields);
-```
-Refresh your server and have another go at writing a blogpost.
+app.post('/create-post', function(request, response){
+  console.log(request.fields);
+});
 
-You should now see an object in the console.  The key should be `blogpost`, just like the name attribute in the form on the HTML page.  The value of `blogpost` will be your message!
+app.get('/get-posts', function(request, response){
+  fs.readFile(__dirname+'/data/posts.json', function(error, data){
+    if(error){
+      console.log('Error reading posts.json: '+error);
+      response.status(500);
+      response.send(error);
+    } else {
+      response.send(data);
+    }
+  });
+});
+
+app.listen(8080, function () {
+  console.log('Server has started listening on port 8080. ');
+});
+```
+{: .solution }
