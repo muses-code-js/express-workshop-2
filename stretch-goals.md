@@ -1,8 +1,7 @@
 ---
-layout: step
-number: 10
+layout: page
 title: Stretch goals!
-permalink: step010/
+permalink: stretch-goals/
 ---
 
 
