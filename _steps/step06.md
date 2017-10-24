@@ -78,8 +78,15 @@ fs.readFile(__dirname+'/data/posts.json', function(error, data){
 The arguments sent to the callback function are:
 
 1. An error object or `null` if no error occurred.
-2. A contents of the file or `null` if there was an error.
+2. A contents of the file as a **buffer** or `null` if there was an error.
 
+The content of `data` is in a format called a **buffer**.  If you log it, it will look something like this:
+
+```
+<Buffer 7b 0a 20 20 20 20 22 31 34 36 37 33 39 30 33 35 36 32 39 31 22 3a 20 22 54 68 69 73 20 69 73 20 6d 79 20 76 65 72 79 20 66 69 72 73 74 20 62 6c 6f 67 ... >
+```
+
+A buffer isn't very useful for us here but we can invoke `.toString()` on it and get human-readable text version of the file.
 
 ## Sending the response in our callback function
 
@@ -87,7 +94,7 @@ In our callback function we will do the following steps:
 
 1. Check if there was an error
 2. If there was an error we log it and send back an error response.  
-3. Otherwise we send back our data as the response.
+3. Otherwise we convert our data buffer to a string and send that as the response.
 
 Update your route to look like the following:
 
@@ -99,7 +106,7 @@ app.get('/get-posts', function(request, response){
       response.status(500);
       response.send(error);
     } else {
-      response.send(data);
+      response.send(data.toString());
     }
   });
 });
@@ -139,7 +146,7 @@ app.get('/get-posts', function(request, response){
       response.status(500);
       response.send(error);
     } else {
-      response.send(data);
+      response.send(data.toString());
     }
   });
 });
