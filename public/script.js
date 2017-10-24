@@ -31,7 +31,7 @@ function postBlogposts (url, data) {
         res.json()
             .then(function (json) {
                 console.log(json);
-                addBlogpostsToPage(json);
+                addBlogPostToPage(json);
                 document.querySelector('form').reset();
         })
     })
@@ -56,29 +56,31 @@ function getBlogposts (url) {
     });
 }
 
+function addBlogPostToPage (post) {
+  console.log('add one:', post);
+  var postDiv         = document.createElement('div');
+  var postText        = document.createElement('div');
+  var postContainer   = document.querySelector('.post-container');
+
+  // put <p> tags around each separate line of blogpost, otherwise
+  // they will all run together
+  postText.innerHTML = post.content.split('\n').map(function(item){
+    return '<p>'+item+'</p>';
+  }).join('');
+  postText.className = 'postBody';
+  postDiv.className = 'post';
+
+  var postDetail = document.createElement('div');
+  postDetail.className = 'postDetail'
+  postDetail.innerHTML = post.timestamp;
+
+  postDiv.appendChild(postText);
+  postDiv.appendChild(postDetail);
+  postContainer.appendChild(postDiv);
+}
+
 function addBlogpostsToPage (data) {
-    for (var blogpost in data) {
-        if (data.hasOwnProperty(blogpost)) {
-
-            var postDiv         = document.createElement('div');
-            var postText        = document.createElement('div');
-            var postContainer   = document.querySelector('.post-container');
-
-            // put <p> tags around each separate line of blogpost, otherwise
-            // they will all run together
-            postText.innerHTML = data[blogpost].split('\n').map(function(item){
-              return '<p>'+item+'</p>';
-            }).join('');
-            postText.className = 'postBody';
-            postDiv.className = 'post';
-
-            var postDetail = document.createElement('div');
-            postDetail.className = 'postDetail'
-            postDetail.innerHTML = blogpost;
-
-            postDiv.appendChild(postText);
-            postDiv.appendChild(postDetail);
-            postContainer.appendChild(postDiv);
-        }
+    for (var i = 0; i < data.blogposts.length; i++){
+      addBlogPostToPage(data.blogposts[i]);
     }
 }
