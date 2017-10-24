@@ -77,6 +77,8 @@ Sometimes the order that middlware functions are added with `app.use()` is impor
 
 What `express-formidable` does is automatically extract form data from the request, and add it back as an easy to use object called `fields`.
 
+
+## Test it out
 To verify that it is working, add a `console.log` statement to your **handler function** to log this object.
 
 ```javascript
