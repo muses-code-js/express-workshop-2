@@ -39,7 +39,7 @@ keywords:
 
 ---
 
-So our Express `app` object is listening for requests, but how will it know which requests to respond to and what to do when it does?
+So our Express `app` object, which is our server, is listening for requests, but how will it know which requests to respond to and what to do when it does?
 
 To do this Express keeps a list of items called 'routes'.  
 
@@ -88,13 +88,21 @@ You will see the "Server is listening" message again.
 
 So now that it's running, how do we send a GET request to it?  By using our trusty web browser of course.
 
-Open a new browser window or tab and type in the address below, replacing **USERNAME** with your Cloud9 username and **WORKSPACE** with the name of your workspace:
+Open a new browser window or tab and type in the address below:
+ * **For Cloud9 Environment**
 
-<pre><code>https://<b>WORKSPACE</b>-<b>USERNAME</b>.c9.io:8080/hello</code></pre>
+    <pre><code>https://<b>WORKSPACE</b>-<b>USERNAME</b>.c9users.io:8080/hello</code></pre> 
+    Don't forget to replace **USERNAME** with your Cloud9 username and **WORKSPACE** with the name of your workspace:
+
+ * **For Local Environment**
+
+    <pre><code>http://localhost:8000</code></pre>
 
 Then press ENTER and you should see the "Hello World!" message displayed in your browser like a webpage.
 
-[INSERT SCREENSHOT]
+It will look a little like this:
+
+![image-title-here](../assets/step4-b.png){:class="img-responsive"}
 
 Everytime you request a webpage in your browser, it is doing a GET request.  Sending GET requests is probably the most common daily activity in the world today.  :smile:
 
@@ -113,7 +121,7 @@ function (request, response) {
 
 `request` contains all the information about the request that matched this route.  We don't use it in this example.  There is a massive amount of information in `request` and we will talk about this more in step #7.
 
-`response` is what we use to send a response back to the client.  It has several different functions that we can ue to do this.  In this example we used `response.send()`.
+`response` is what we use to send a response back to the client.  It has several different functions that we can use to do this.  In this example we used `response.send()`.
 
 Exactly what steps you perform in each handler will depend on your application and the specific route that it belongs to.
 
@@ -130,7 +138,7 @@ Here's what you need to know:
 Test it by going to in your browser:
 
  * For Cloud9: `https://WORKSPACE-USERNAME.c9users.io:8080/chocolate`
- * For local: `https://localhost:8080/chocolate`
+ * For local: `http://localhost:8080/chocolate`
 
 
 Check the solution below if you get stuck.

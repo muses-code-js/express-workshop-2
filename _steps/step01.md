@@ -29,8 +29,8 @@ However the only thing we are going to use it for in this workshop is defining d
 
 To create your new `package.json` file:
 
-1. Open your terminal
-2. Make sure you are in the `express-workshop-2` folder
+1. Open your terminal (Terminal is at the bottom on cloud9.io, starts with `bash`)
+2. Make sure you are in the `express-workshop-2` folder (Don't worry if you use cloud9.io. It starts in the project directory as default.)
 3. Run the command `npm init -y`.
 
 This creates a new file with default values and displays it for you.  

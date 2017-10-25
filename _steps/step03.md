@@ -89,7 +89,8 @@ var app = express();
 
     The `listen()` function takes two arguments: a **port** number and a **callback function**.
 
-    The **port number** can be thought of as a door number or apartment number.  Requests for this server will be sent "to that port". Every server running on the same computer must be listening on a different port.
+    The **port number** can be thought of as a door number or apartment number.  Requests for this server will be sent "to that port". As every apartment on the same street has a different door number,
+    every server running on the same computer must be listening on a different port.
 
     Cloud9 only allows you to use port `8080`.  If you are running Node.js on your own machine you can use any port between `1023` and `65535`.  We will use port `8080`.
 
@@ -106,13 +107,17 @@ var app = express();
     });
     ```
 
+    Currently, your server is doing nothing but printing the message `Server has started listening on port 8080.` using the console.log() function.
+    console.log() is a modern way of debugging (inspecting what your application does) JavaScript code for both client and server side. 
+    Client side logs appear on browsers, while server side logs show up on the terminal. As we created a server, we expect to see this log on the terminal.
+
 ## Start it up
 
 You've built your server, but it isn't running yet.
 
 To run a Node.js program we use the `node` program.
 
-Type the following command in the Cloud9 terminal in the same directory as `server.js` and press ENTER:
+Type the following command in the Cloud9 terminal or your local terminal in the same directory as `server.js` and press ENTER:
 
 ```
 node server.js
