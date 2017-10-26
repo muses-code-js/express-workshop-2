@@ -2,7 +2,7 @@
 layout: step
 number: 2
 title: Installing Express
-permalink: step02/
+permalink: step2/
 
 keywords:
 

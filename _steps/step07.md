@@ -2,7 +2,7 @@
 layout: step
 number: 7
 title: Saving New Posts (1/4)
-permalink: step07/
+permalink: step7/
 
 keywords:
   - term: GET

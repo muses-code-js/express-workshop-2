@@ -2,7 +2,7 @@
 layout: step
 number: 6
 title: Displaying your posts
-permalink: step06/
+permalink: step6/
 
 keywords:
 

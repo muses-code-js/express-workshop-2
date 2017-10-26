@@ -2,7 +2,7 @@
 layout: step
 number: 3
 title: Building the server
-permalink: step03/
+permalink: step3/
 
 keywords:
   - term: server

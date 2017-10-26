@@ -2,7 +2,7 @@
 layout: step
 number: 8
 title: Saving New Posts (2/4)
-permalink: step08/
+permalink: step8/
 keywords:
   - term: Date
     define: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date

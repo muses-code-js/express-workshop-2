@@ -2,7 +2,7 @@
 layout: step
 number: 1
 title: Setting up your project
-permalink: step01/
+permalink: step1/
 
 keywords:
   - term: package.json

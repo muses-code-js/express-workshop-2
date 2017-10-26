@@ -2,7 +2,7 @@
 layout: step
 number: 4
 title: Communicating with the server
-permalink: step04/
+permalink: step4/
 
 keywords:
   - term: handler function

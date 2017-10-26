@@ -2,7 +2,7 @@
 layout: step
 number: 5
 title: Serving static files
-permalink: step05/
+permalink: step5/
 
 keywords:
 
