@@ -29,7 +29,7 @@ Update your `/create-post` endpoint as follows:
 ```javascript
 app.post('/create-post', function(request, response){
   var now = Date.now();
-  var newpost = {
+  var newPost = {
     timestamp: now,
     content: request.fields.blogpost
   }
@@ -166,7 +166,7 @@ app.use(formidable());
 
 app.post('/create-post', function(request, response){
   var now = Date.now();
-  var newpost = {
+  var newPost = {
     timestamp: now,
     content: request.fields.blogpost
   }
