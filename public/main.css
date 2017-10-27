@@ -112,14 +112,17 @@ h2 {
 
 
 div.entry-container {
-	padding: 20px;
+	padding: 20px !important;
 }
 
 div.entry-container textarea {
 	width: 96%;
+	display: block;
 	border-radius: 3px;
 	border: 1px solid lightgrey;
+	margin: 0px auto;
 	padding: 12px 12px;
+	resize: none;
 
 }
 
@@ -130,7 +133,7 @@ button[type="submit"]:hover {
 }
 
 button[type="submit"] {
-	margin-top: 10px;
+	margin-top: 20px;
 	font-size: 16px;
   outline: 0;
   color: #fff;
@@ -195,5 +198,16 @@ div.postBody {
 	button[type="submit"] {
 		width: 100%;
 	}
+
+	div.entry-container {
+		padding: 10px !important;
+	}
+
+	div.entry-container textarea {
+		width: 93%;
+		margin: 0px auto;
+		padding: 12px 12px;
+	}
+
 
 }
