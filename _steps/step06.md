@@ -127,7 +127,7 @@ In real world apps you should check for things like whether the file is there fi
 
 You should see the same page as before, but this time with a post displayed:
 
-[INSERT SCREENSHOT]
+![image-title-here](../assets/step6-b.png){:class="img-responsive"}
 
 If it isn't working for you, you can double-check that your code is right with the solution below:
 
