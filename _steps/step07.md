@@ -95,7 +95,7 @@ Test this by:
 
 In your terminal you should see your post logged:
 
-[INSERT SCREENSHOT]
+![image-title-here](../assets/step7-b.png){:class="img-responsive"}
 
 If it isn't working for you, you can double-check that your code is right with the solution below:
 

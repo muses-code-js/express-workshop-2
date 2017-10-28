@@ -74,7 +74,7 @@ Restart your server again and try to create some new posts.
 
 You should see your new posts added to the page.
 
-[INSERT SCREENSHOT]
+![image-title-here](../assets/step8-b.png){:class="img-responsive"}
 
 But remember that we haven't actually saved the new post yet so if you refresh the page they all disappear.  
 

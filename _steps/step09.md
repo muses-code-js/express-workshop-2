@@ -12,7 +12,9 @@ As we saw in the previous step, we need to actually save our new post otherwise 
 
 All of our posts are saved in the file `data/posts.json`.
 
-Unfortunately we can't just "add" to the file as a single step.  What we will need to do is:
+You can easily append a new data to a file using [fs.append()](https://nodejs.org/api/fs.html#fs_fs_appendfile_file_data_options_callback) function as long as the data is a string or a buffer.
+Unfortunately we can't just "add" to the file as a single step as our data is in the format of a JavaScript object. 
+So, what we will need to do is:
 
 1. Read all the data from `data/posts.json`
 2. Update that data
@@ -52,6 +54,7 @@ Notice how we've moved the `response.send(newPost)` inside of the `fs.readFile()
 
 This is because `fs.readFile()` is a non-blocking function.  Anything that we put after `fs.readFile()` is going to happen immediately after `fs.readFile()` starts, and almost certainly before it finishes.  If we want to ensure that certain code doesn't run until after a non-blocking function finishes then we must but that code inside of the non-blocking function's callback function.
 
+In other words, if we don't want to send our response before finishing reading the file, which we don't want,  then we must send the response inside of the `fs.readFile()` function's callback function.
 ## What's in our posts.json file?
 
 So now that we have read our file from disk, let's have a look at it.
@@ -135,19 +138,19 @@ We need to add our object to the blogposts array.
 
 Arrays provide a bunch of different functions to make changes to them.
 
-We are going to use `splice()` to add `newPost` to the end of `posts.blogposts`.
+We are going to use `push()` to add `newPost` to the end of `posts.blogposts`.
 
 Remove any `console.log()` statements you might have added above and add this line after the `JSON.parse()` line.
 
 ```javascript
-posts.blogposts.splice(-1, newPost);
+posts.blogposts.push(newPost);
 ```
 
-`splice(index, item)` says go to position `index` in the array and insert `item` there.  And a negative index means start at the end instead of the beginning.
+The `push()` method adds one or more elements to the end of an array and returns the new array.
 
-To test this add a `console.log(posts.blogposts)`, (restart your server), and create a new post.  You should see the the updated array logged in the terminal with your new post object.
+To test this add a `console.log(posts.blogposts)`, (restart your server), and create a new post.  You should see the updated array logged in the terminal with your new post object.
 
-[INSERT SCREENSHOT]
+![image-title-here](../assets/step9-b.png){:class="img-responsive"}
 
 If it isn't working for you, you can double-check that your code is right with the solution below.
 
@@ -178,7 +181,7 @@ app.post('/create-post', function(request, response){
       response.send(error);
     } else {
       var posts = JSON.parse(data);
-      posts.blogposts.splice(-1, newPost);
+      posts.blogposts.push(newPost);
       console.log(posts.blogposts)
 
       response.send(newPost);
