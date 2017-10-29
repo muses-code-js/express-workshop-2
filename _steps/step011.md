@@ -3,6 +3,7 @@ layout: step
 number: 11
 title: Congratulations
 permalink: step11/
+end: true
 keywords:
 ---
 
