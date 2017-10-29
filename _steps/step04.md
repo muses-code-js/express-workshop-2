@@ -102,7 +102,7 @@ Then press ENTER and you should see the "Hello World!" message displayed in your
 
 It will look a little like this:
 
-![image-title-here](../assets/step4-b.png){:class="img-responsive"}
+![Testing the /hello endpoint in the browser](../assets/step4-b.png){:title="Testing the /hello endpoint in the browser" class="img-responsive imgbox"}
 
 Everytime you request a webpage in your browser, it is doing a GET request.  Sending GET requests is probably the most common daily activity in the world today.  :smile:
 

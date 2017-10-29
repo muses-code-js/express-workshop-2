@@ -45,7 +45,7 @@ app.use(express.static("public"));
 
  If you see a `Node Girls` page, then your static assets have been successfully served.
 
-![image-title-here](../assets/step5-b.png){:class="img-responsive"}
+![Viewing the app in the Browser](../assets/step5-b.png){:title="Viewing the app in the Browser" class="img-responsive imgbox"}
 
 This line tells `app` to use the `express.static()` middleware function and to point it at the folder `public`.
 

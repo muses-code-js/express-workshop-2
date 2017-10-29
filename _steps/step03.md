@@ -35,7 +35,7 @@ Since we are going to be building a server, we should probably talk about what a
 
 A **server** is a computer program that provides some kind of functionality to other programs (called **clients**). The client and server programs are often (but not always) running on different computers.  We often also refer to the computer that the server software is running on as a server too.
 
-![Server flow](https://files.gitter.im/heron2014/FiiK/server.png)
+![Server flow](../assets/step3-a.png){:class="img-responsive imgbox" title="Server flow"}
 
 A server "listens" for requests sent to it from clients.  Depending on the request the server may perform some kind of work and then send a response back to the client.  For example, client might send a request for information that the server looks up in a database and then sends back as the response.  If the server cannot fulfil the request for some reason then the response could be an error message like the famous *'Error 404: File not found.'*  
 
@@ -129,6 +129,6 @@ In the terminal you will see it display the "Server has started listening" messa
 
 It will look a little like this:
 
-![image-title-here](../assets/step3-b.png){:class="img-responsive"}
+![Running node server.js in the terminal](../assets/step3-b.png){:title="Running node server.js in the terminal" class="img-responsive imgbox"}
 
 If you see this, congratulations! :clap: :clap: You have built yourself a server and started it running!

@@ -150,7 +150,7 @@ The `push()` method adds one or more elements to the end of an array and returns
 
 To test this add a `console.log(posts.blogposts)`, (restart your server), and create a new post.  You should see the updated array logged in the terminal with your new post object.
 
-![image-title-here](../assets/step9-b.png){:class="img-responsive"}
+![Checking our modified blogposts array in the Terminal](../assets/step9-b.png){:class="img-responsive imgbox" title="Checking our modified blogposts array in the Terminal"}
 
 If it isn't working for you, you can double-check that your code is right with the solution below.
 

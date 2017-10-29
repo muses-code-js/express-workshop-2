@@ -74,7 +74,7 @@ Restart your server again and try to create some new posts.
 
 You should see your new posts added to the page.
 
-![image-title-here](../assets/step8-b.png){:class="img-responsive"}
+![Checking new post is added to the page in the Browser](../assets/step8-b.png){:class="img-responsive imgbox" title="Checking new post is added to the page in the Browser"}
 
 But remember that we haven't actually saved the new post yet so if you refresh the page they all disappear.  
 
