@@ -132,7 +132,7 @@ Check it out by restarting your server & hitting the post button again & watchin
 
 ## Add our new post to the array
 
-Ok so now we have our data from the file parsed and available to be manipulated. And we have the object that represents our new post.  So lets get them together. :smile:
+Ok so now we have our data from the file parsed and available to be manipulated. And we have the object that represents our new post.  So lets get them together.
 
 We need to add our object to the blogposts array.
 
