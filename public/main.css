@@ -103,11 +103,9 @@ h2 {
 
 .title {
 	color: white;
-
 	padding: 0px;
 	padding: 15px 0px;
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.7);
-
 }
 
 
@@ -123,7 +121,6 @@ div.entry-container textarea {
 	margin: 0px auto;
 	padding: 12px 12px;
 	resize: none;
-
 }
 
 
@@ -211,3 +208,5 @@ div.postBody {
 
 
 }
+
+/* 1. delete button styles */

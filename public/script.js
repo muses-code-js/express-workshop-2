@@ -40,6 +40,8 @@ function postBlogposts (url, data) {
     });
 }
 
+// 2. delete post function
+
 function getBlogposts (url) {
     fetch(url, {
         method: 'GET'
@@ -68,11 +70,14 @@ function addBlogPostToPage (post) {
     return '<p>'+item+'</p>';
   }).join('');
   postText.className = 'postBody';
+  postDiv.id = post.timestamp;
   postDiv.className = 'post';
 
   var postDetail = document.createElement('div');
   postDetail.className = 'postDetail'
   postDetail.innerHTML = formatDate(post.timestamp);
+
+  // 3. insert delete button here
 
   postDiv.appendChild(postText);
   postDiv.appendChild(postDetail);
