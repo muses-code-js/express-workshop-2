@@ -12,9 +12,9 @@ As we saw in the previous step, we need to actually save our new post otherwise 
 
 All of our posts are saved in the file `data/posts.json`.
 
-You can easily append a new data to a file using [fs.append()](https://nodejs.org/api/fs.html#fs_fs_appendfile_file_data_options_callback) function as long as the data is a string or a buffer.
-Unfortunately we can't just "add" to the file as a single step as our data is in the format of a JavaScript object. 
-So, what we will need to do is:
+Because we are storing our data as JSON, we can't just "add" to the file as a single step.
+
+What we will need to do is:
 
 1. Read all the data from `data/posts.json`
 2. Update that data
