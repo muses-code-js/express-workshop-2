@@ -29,6 +29,9 @@ keywords:
   - term: invoke
     define: "*Invoking* or *calling* a function means to tell the function to run it's code."
 
+  - term: console.log()
+    define: Display it's parameters (converted to strings) in the terminal.  Very useful for debugging.
+
 ---
 
 Since we are going to be building a server, we should probably talk about what a server *is*.
@@ -107,10 +110,6 @@ var app = express();
     });
     ```
 
-    Currently, your server is doing nothing but printing the message `Server has started listening on port 8080.` using the console.log() function.
-    console.log() is a modern way of debugging (inspecting what your application does) JavaScript code for both client and server side. 
-    Client side logs appear on browsers, while server side logs show up on the terminal. As we created a server, we expect to see this log on the terminal.
-
 ## Start it up
 
 You've built your server, but it isn't running yet.
@@ -132,3 +131,13 @@ It will look a little like this:
 ![Running node server.js in the terminal](../assets/step3-b.png){:title="Running node server.js in the terminal" class="img-responsive imgbox"}
 
 If you see this, congratulations! :clap: :clap: You have built yourself a server and started it running!
+
+## About console.log()
+
+Currently, your server is doing nothing but printing the message `Server has started listening on port 8080.` using the `console.log()` function.
+
+`console.log()` is used to display messages in the terminal (AKA the console) that your application is running from.  We refer to these as "console" or "log" messages.  These messages are commonly used to display status information or serious error messages from your program as it is running.  They are only displayed in the terminal where your application is running, the users of your app will not see them.
+
+We also use `console.log()` when debugging our app.  When something didn't work as you expected, you can temporarily add `console.log()` statements to your program to check the value of variables etc so see what is really going on.  These lines are then removed once we have fixed the problem.
+
+We'll frequently add lines like this in this workshop so you can see what is happening behind the scenes.  
