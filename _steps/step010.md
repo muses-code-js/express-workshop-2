@@ -4,6 +4,9 @@ number: 10
 title: Saving New Posts (4/4)
 permalink: step10/
 keywords:
+  - term: JSON.stringify()
+    define: |
+      Converts a JavaScript value to a JSON string. See [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
   - term: fs.writeFile()
     define: Asynchronously writes data to a file
 
@@ -23,19 +26,10 @@ Now, between steps 2 and 3 we have to write it back to disk again.
 
 Before writing our updated data to the `data/post.json`, we need to turn it back into a JSON string to be able to write on the file.
 
-To do this, we are going to use `JSON.stringify()` function. It takes 3 parameters:
- * **Value:** The value to convert to a JSON string
- 
-    In our case, the value is `posts`.
-    
- * **Replacer:** A function that alters the behavior of the stringification process, or an array of String and Number objects that serve as a whitelist for selecting/filtering the properties of the value object to be included in the JSON string. If this value is null or not provided, all properties of the object are included in the resulting JSON string.
+To do this, we are going to use the `JSON.stringify()` function. It's like the opposite of `JSON.parse()`.  It any takes any Javascript value as a parameter and returns the string of the JSON representation of it that value.
 
-    In our case, we are going to use `null` as a replacer, as we don't want to do any filtering at all. 
-    
- * **Space:** A String or Number object that's used to insert white space into the output JSON string for readability purposes.
-    
-    In our case, we are going to use `4`.
-    
+There's a few other optional parameters you can pass as well but we won't worry about them here.
+
 Update your `fs.readFile` code as follows to parse the file data.
 
 ```javascript
@@ -47,13 +41,13 @@ fs.readFile(__dirname+'/data/posts.json', function(error, data){
     } else {
       var posts = JSON.parse(data);
       posts.blogposts.push(newPost);
-      var updatedData = JSON.stringify(posts, null, 4);
-      
+      var updatedData = JSON.stringify(posts);
+
       response.send(newPost);
     }
   });
 ```
-To see the difference between Javascript Object and JSON data, you could try adding 2 console.log() statements before the response.send().
+To see the difference between Javascript Object and JSON data, you could try adding two `console.log()` statements before the `response.send()`.
 
 Like this:
 
@@ -66,7 +60,9 @@ Check it out by restarting your server & hitting the post button again & watchin
 
 First log you see on your terminal is a JavaScript object while the second log is a JSON string.
 
-Now it's time to write!
+Aside from some different formatting, at first you might think they are exactly the same.  But there are some subtle differences like the object property names being wrapped in `"`s in JSON.
+
+Now it's time to write that file!
 
 ## Writing to a file
 
@@ -99,7 +95,7 @@ fs.readFile(__dirname+'/data/posts.json', function(error, data){
   } else {
     var posts = JSON.parse(data);
     posts.blogposts.push(newPost);
-    var updatedData = JSON.stringify(posts, null, 4);
+    var updatedData = JSON.stringify(posts);
 
     fs.writeFile(__dirname+'/data/posts.json', updatedData,function(error){
       if(error){
@@ -150,13 +146,13 @@ app.post('/create-post', function(request, response){
     } else {
       var posts = JSON.parse(data);
       posts.blogposts.push(newPost);
-      var updatedData = JSON.stringify(posts, null, 4);
-      
+      var updatedData = JSON.stringify(posts);
+
       fs.writeFile(__dirname+'/data/posts.json', updatedData,function(error){
           if(error){
               console.log('Error writing posts.json: '+error);
               response.status(500);
-              response.send(error); 
+              response.send(error);
           } else {
             response.send(newPost);              
           }  
