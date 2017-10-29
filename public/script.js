@@ -72,11 +72,16 @@ function addBlogPostToPage (post) {
 
   var postDetail = document.createElement('div');
   postDetail.className = 'postDetail'
-  postDetail.innerHTML = post.timestamp;
+  postDetail.innerHTML = formatDate(post.timestamp);
 
   postDiv.appendChild(postText);
   postDiv.appendChild(postDetail);
-  postContainer.appendChild(postDiv);
+  postContainer.prepend(postDiv);
+}
+
+function formatDate(timestamp){
+  var dateObj = new Date(timestamp);
+  return dateObj.toLocaleString();
 }
 
 function addBlogpostsToPage (data) {
