@@ -1,6 +1,10 @@
 {% assign steps = site.steps | sort: "number" %}
 
 <div class="step-nav">
+  <ul>
+    <li><a href="">Home</a></li>
+  </ul>
+
   <h3>Workshop Steps</h3>
   <ul>
   {% for step in steps %}
@@ -10,6 +14,21 @@
         </a>
       </li>
   {% endfor %}
+  </ul>
+
+  <h3>Challenges</h3>
+  <ul>
+  {% for challenge in site.challenges %}
+      <li class='{% if page.cnumber == challenge.cnumber %}active{% endif %}'>
+        <a href="{{ challenge.url | relative_url }}">
+          {% if challenge.cnumber != "start" %}{{challenge.cnumber}} - {% endif %}{{ challenge.title | escape }}
+        </a>
+      </li>
+  {% endfor %}
+  </ul>
+
+  <ul>
+    <li><a href="">The Journey Continues</a></li>
   </ul>
 
   <h3>Useful Links</h3>

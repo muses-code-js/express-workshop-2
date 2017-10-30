@@ -29,6 +29,8 @@ theme: minima
 collections:
   steps:
       output: true
+  challenges:
+      output: true
 
 plugins:
   - jekyll-feed
