@@ -100,7 +100,7 @@ Make sure you save those changes & refresh the web page.  You should see the del
 
 It will look like this:
 
-![Delete feature enabled](../assets/challenge-1a.png){:title="Delete feature enabled" class="img-responsive imgbox"}
+![Delete feature enabled]({{'/assets/challenge-1a.png' | relative_url }}){:title="Delete feature enabled" class="img-responsive imgbox"}
 
 ## Backend Specification
 
