@@ -74,7 +74,7 @@ function addBlogPostToPage (post) {
   postDiv.className = 'post';
 
   var postDetail = document.createElement('div');
-  postDetail.className = 'postDetail'
+  postDetail.className = 'postDetail';
   postDetail.innerHTML = formatDate(post.timestamp);
 
   // 3. insert delete button here
@@ -94,3 +94,6 @@ function addBlogpostsToPage (data) {
       addBlogPostToPage(data.blogposts[i]);
     }
 }
+
+// 3. insert mood list here
+
