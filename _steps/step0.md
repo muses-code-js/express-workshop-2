@@ -42,7 +42,7 @@ Please choose your environment wisely and follow the instructions.
     Having an issue? Instructions for doing this can be found [here](https://docs.c9.io/v1.0/docs/create-a-workspace).
 
 ## Fork this repository
-1. Go to the home page of [express-workshop](https://github.com/node-girls-australia/express-workshop) repository.
+1. Go to the home page of [express-workshop-2](https://github.com/node-girls-australia/express-workshop-2) repository.
 2. In the top-right corner of the page, click Fork. 
  
  That's it. Having an issue? Instructions for doing this can be found [here](https://help.github.com/articles/fork-a-repo/).
