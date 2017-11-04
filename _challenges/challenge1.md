@@ -4,6 +4,7 @@ cnumber: 1
 end: true
 title: Mood Indicator
 permalink: challenges/1/
+difficulty: 1
 ---
 
 This challenge adds a menu to to pick a "mood" from a list when making a post.  That mood is then displayed on that post.

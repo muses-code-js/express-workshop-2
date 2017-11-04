@@ -4,6 +4,7 @@ cnumber: 2
 end: true
 title: Deleting Posts
 permalink: challenges/2/
+difficulty: 4
 keywords:
   - term: URL parameters
     define: URL parameters
