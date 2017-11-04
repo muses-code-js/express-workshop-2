@@ -54,6 +54,8 @@ If you look in `package.json` now you'll see a new section called `dependencies`
   }
 ```
 
+Note: your version number for express may be different to the one above.
+
 If you look in `node_modules` directory you will see a folder for each module.  You will see around 50 folders because in addition to `express` it also installed all of the modules used by `express` and all of the modules that they use, and all of the modules that those ones use and so on.  But it is smart enough to only download one copy of each.
 
 So now we have `express` and all of it's dependencies installed, lets actually get on to writing some code.
