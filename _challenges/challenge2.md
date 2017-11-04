@@ -2,151 +2,183 @@
 layout: step
 cnumber: 2
 end: true
-title: Mood Indicator
+title: Deleting Posts
 permalink: challenges/2/
+keywords:
+  - term: URL parameters
+    define: URL parameters
+  - term: DELETE request method
+    define: DELETE request method
 ---
 
-This challenge adds a menu to to pick a "mood" from a list when making a post.  That mood is then displayed on that post.
+This challenge adds the ability to delete posts to your app.
 
-Here's how this challenge works:
+Here's how a challenge works:
 
 1. We give you the changes to the front-end and tell you where to insert them to enable the feature.
 2. We describe the expectations for the backend changes.
 3. We'll discuss the steps & things you need to understand to do this and give some hints.
+4. Then you have to implement the backend changes yourself.  
 
-Then you have to implement the backend changes yourself.  
+You don't need to complete a challenge to do any of the ones after it. Do the ones you like.  The earlier ones are usually easier though.
 
 There will be a solution at the end.  But remember there is always more than one way of doing things. :smile:
 
 
 ## 1. Enabling the UI
 
-First up we have some changes to the UI.
+First up we have some changes to the UI to add a delete button to each post.
 
 To add these changes do the following steps:
 
 1. Open up `public/main.css`
 
-    Find the line `/* 1. mood indicator */`.
+    Find the line `/* 1. delete button styles */`.
 
     Insert the following code after that line:
 
     ```css
-    @font-face {
-      font-family: "NotoColorEmoji";
-      src: url("NotoColorEmoji.ttf");
-      text-decoration: none;
-      font-style: normal;
+    .delButton {
+    	display: inline;
+    	float: right;
+    	color: rgba(200,0,0,0.5);
     }
 
-    div.mood {
-     margin: 5px;
-     font-size: 18px;
-    }
-
-    div.mood .emoji {
-     font-family: "NotoColorEmoji";
-     font-size: 30px;
-    }
-
-    div.mood-select {
-     margin: 25px 15px;
-     font-size: 20px;
-     display: inline-block;
-    }
-    
-    @media screen and (max-width: 600px) {
-      div.mood-select {
-        margin: 15px 20px 0px 20px;
-      }
+    .delButton:hover {
+    	color: rgba(200,0,0,1);
+    	cursor: pointer;
     }
     ```
 
 2. Open up `public/script.js`
 
-    Find the line `// 2. insert mood display here`.
+    Find the line `// 2. delete post function`.
 
     Insert the following code after that line:
-    
+
     ```javascript
-    var moodNames = [
-      '',
-      '<span class="emoji">😃</span> Happy',
-      '<span class="emoji">😛</span> Joking',
-      '<span class="emoji">😢</span> Sad',
-      '<span class="emoji">😔</span> Regretful',
-      '<span class="emoji">😡</span> Angry',
-      '<span class="emoji">😲</span> Suprised',
-      '<span class="emoji">😎</span> Smug',
-      '<span class="emoji">👑</span> Triumphant',
-      '<span class="emoji">😍</span> In love' 
-    ];
-    var moodDiv = document.createElement('div');
-    moodDiv.className = 'mood';
-    moodDiv.innerHTML = moodNames[post.mood];
-    postText.append(moodDiv);
-    ```
-
-
-3. Open up `public/index.html`
-
-    Find the line `<!-- 3. mood selector -->`.
-
-    Insert the following code after that line:
-
-    ```html
-    <div class="mood-select">I'm feeling:
-      <select name="mood">
-        <option value="0">None</option>
-        <option value="1">😃 Happy</option>
-        <option value="2">😛 Joking</option>
-        <option value="3">😢 Sad</option>
-        <option value="4">😔 Regretful</option>
-        <option value="5">😡 Angry</option>
-        <option value="6">😲 Suprised</option>
-        <option value="7">😎 Smug</option>
-        <option value="8">👑 Triumphant</option>
-        <option value="9">😍 In love</option>
-      </select>
-    </div>
-    ```
-
-Make sure you save those changes & refresh the web page.  You should see the "Mood" menu near the `POST` button.
-
-It will look like this:
-
-![Mood feature enabled]({{'/assets/challenge-2a.png' | relative_url }}){:title="Mood feature enabled" class="img-responsive imgbox"}
-
-With the above changes, the webpage now does the following:
-
-1. When creating a new post, it sends a value of 0 to 9 as the field `mood` as part of the form data.
-2. Expects the blogpost objects retreived from `/get-posts` to each have a mood property, with a value of 0 to 9, for which it displays the corresponding mood emoji and description.
-
-Once properly implemented posts with a mood set with look like this:
-
-![Post with Mood set]({{'/assets/challenge-2b.png' | relative_url }}){:title="Post with Mood set" class="img-responsive imgbox"}
-
-
-## Backend Specification
-
-The following changes are required:
-
-1. `/create-post` receives an additional form data field, `mood` which must be saved as part of the post object.
-2. The post objects returned by `/get-posts` should include a mood property. Example:
-
-    ```json
-    {
-      "timestamp": "2342423432233",
-      "content": "This is a new post",
-      "mood": "3"
+    function deletePost (timestamp) {
+      fetch('/delete-post/'+timestamp, {
+          method: 'DELETE'
+      })
+      .then(function (res) {
+          res.json()
+          .then(function (json) {
+            if(json.success){
+              var element = document.getElementById(timestamp);
+              element.outerHTML = "";
+              delete element;
+            } else {
+              alert('Delete failed!');
+            }
+          });
+      })
+      .catch(function (err) {
+        alert('Delete failed!\n\n'+err);
+      });
     }
     ```
 
+2. Open up `public/script.js`
+
+    Find the line `// 3. insert delete button here`.
+
+    Insert the following code after that line:
+
+    ```javascript
+    var delButton = document.createElement('div');
+    delButton.onclick = function(){
+      if (confirm('Are you sure you want to delete this post?  You can\'t undo this.')){
+        deletePost(post.timestamp);
+      }
+    }
+    delButton.className = 'delButton'
+    delButton.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i> Delete';
+    postDetail.appendChild(delButton);
+    ```
+
+Make sure you save those changes & refresh the web page.  You should see the delete link at the bottom of each post.
+
+It will look like this:
+
+![Delete feature enabled]({{'/assets/challenge-1a.png' | relative_url }}){:title="Delete feature enabled" class="img-responsive imgbox"}
+
+## Backend Specification
+
+To implement the delete feature in the backend, you need to create an endpoint for deleting a post.  This endpoint has the following requirements:
+
+ * Endpoint URL: `/delete-post/:timestamp`
+ * Request Method: DELETE
+ * It needs to delete the post from `posts.json` with the matching timestamp and make sure the file is saved.
+ * If no error occurs, the expected response is `{ "success": true }`
+ * If an error occurs, the expected response is `{ "success": false }`
+
+**Hint:** This endpoint will be very similar to `/create-post` as you will need to read `posts.json` in, do some updates, and then save that file again.
+
+## Route Parameters
+
+Route parameters are a way to create routes where specified parts of the URL can have any value, and you can access their value in the route's handler function.  
+
+You can do this by prefixing a URL segment (bit between each pair of `/`) with a colon `:`.
+
+Each of those route parameters will be available as a property of `request.params` with the corresponding name.
+
+As an example:
+
+```javascript
+app.get('/say/:name/:phrase', function(request, response){
+  response.send(request.params.name + ' says "'+request.params.phrase+'"' );
+});
+```
+
+`/say/sarah/giraffe` will respond with `sarah says "giraffe"``
+
+`/say/sarah` will not match this route.
+
+Route parameters are a great way to both use the URL to pass information in the request, and to make your apps URL's more meaningful.
+
+## The DELETE request method
+
+The DELETE request method indicates that this request expects to result in data being deleted.
+
+Just like GET and POST there is a corresponding Express function for creating DELETE routes.
+
+## Array Filtering
+
+There are several different ways to remove items from an array.  `Array.filter()` is probably the most powerful and easiet to use, but it might seem strange to start with.
+
+Lets demonstrate it with an array of names.  We are going to make a new array which only has those names with more than 5 letters in them.
+
+```javascript
+// original array
+var names = [ 'Michael', 'Susan', 'Angelica', 'David', 'Joe'];
+
+// making a new array using filter
+var filteredNames = names.filter( function(name){
+  return name.length > 5;   //only include those longer than 5 letters
+} );
+
+console.log(filteredNames);
+```
+
+If you run this code you will see the output of:
+
+```
+[ 'Michael', 'Angelica']
+```
+
+`Array.filter()` doesn't change the array.  It makes a new one according to a "rule" that you give it.  This rule is a function that you pass to `filter()`.  
+
+`filter()` runs the function once for each element of the array, passing the array element as a parameter.  Within that function you can do whatever you want to determine if you want to keep that element or not.  If the function returns `true` then that means the element should be kept.  `false` means don't keep the element.  
+
+Remember `filter()` doesn't change the original array, it creates a new one with only the items to keep from the first.  So you will have to remember to explictily do something with your new array.
+
 ## Hints
 
-1. Remember you can use `console.log()` to check how the contents of variables or parameters change.
-2. You will only need to change the `/create-post` endpoint to ensure that the mood data is saved.  
-3. `/get-posts` returns all the information regardless so no changes are required there.
+1. You'll be creating a new endpoint, that will probably be very similar to `/create-post`
+2. It will be a DELETE request
+3. You'll need to use route parameters to indicate which post is to be deleted
+4. `Array.filter()` is an easy way to remove items from an array
 
 ## Solution
 
@@ -155,14 +187,9 @@ If you get stuck or just want to compare with your answer click below to see our
 Note that this solution only shows the endpoint in question, not all of `server.js`.
 
 ```javascript
-app.post('/create-post', function(request, response){
-  var now = Date.now();
-  var newPost = {
-    timestamp: now,
-    content: request.fields.blogpost,
-    mood: request.fields.mood
-  }
+app.delete('/delete-post/:timestamp', function(request, response){
 
+  // read our file in
   fs.readFile(__dirname+'/data/posts.json', function(error, data){
     if(error){
       console.log('Error reading posts.json: '+error);
@@ -170,24 +197,26 @@ app.post('/create-post', function(request, response){
       response.send(error);
     } else {
       var posts = JSON.parse(data);
-      posts.blogposts.push(newPost);
 
-      var updatedData = JSON.stringify(posts);
+      // filter out post with same timestamp value as request.params.timestamp
+      posts.blogposts = posts.blogposts.filter(function(post){
+        return post.timestamp != request.params.timestamp;
+      });
 
-      console.log(posts);
-      console.log(updatedData);
-
+      // stringify and write to disk
+      updatedData = JSON.stringify(posts);
       fs.writeFile(__dirname+'/data/posts.json', updatedData, function(error){
         if(error){
           console.log('Error writing posts.json: '+error);
           response.status(500);
           response.send(error);
         } else {
-          response.send(newPost);
+          response.send({success: true});
         }
       });
     }
   });
+
 });
 ```
 {: .solution }
