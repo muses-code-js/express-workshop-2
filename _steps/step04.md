@@ -91,7 +91,7 @@ So now that it's running, how do we send a GET request to it?  By using our trus
 Open a new browser window or tab and type in the address below:
  * **For Cloud9 Environment**
 
-    <pre><code>https://<b>WORKSPACE</b>-<b>USERNAME</b>.c9users.io:8080/hello</code></pre> 
+    <pre><code>https://<b>WORKSPACE</b>-<b>USERNAME</b>.c9users.io:8080/hello</code></pre>
     Don't forget to replace **USERNAME** with your Cloud9 username and **WORKSPACE** with the name of your workspace:
 
  * **For Local Environment**
