@@ -79,6 +79,8 @@ function addBlogPostToPage (post) {
 
   // 3. insert delete button here
 
+   // 2. insert mood display here
+   
   postDiv.appendChild(postText);
   postDiv.appendChild(postDetail);
   postContainer.prepend(postDiv);
@@ -95,5 +97,5 @@ function addBlogpostsToPage (data) {
     }
 }
 
-// 3. insert mood list here
+
 
