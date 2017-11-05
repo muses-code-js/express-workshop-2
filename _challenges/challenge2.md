@@ -13,6 +13,8 @@ keywords:
     define: |
       The DELETE request method indicates that a request is intended to result in data being deleted by the server.
        [MDN HTTP docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+  - term: Array.filter()
+    define: A function on array objects that lets you create another array that contains subset of the current one. [MDN Array.filter() docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 ---
 
 This challenge adds the ability to delete posts to your app.
@@ -149,9 +151,11 @@ Just like GET and POST there is a corresponding Express function for creating DE
 
 ## Array Filtering
 
-There are several different ways to remove items from an array.  `Array.filter()` is probably the most powerful and easiet to use, but it might seem strange to start with.
+There are several different techniques you can use to remove items from an array.  `Array.filter()` is probably the most powerful, but it might seem strange at first.
 
-Lets demonstrate it with an array of names.  We are going to make a new array which only has those names with more than 5 letters in them.
+`Array.filter()` lets you makes a new array by taking an existing one and choosing elements from it to include in the new one.  You can then use that array in place of the old one.  
+
+Lets demonstrate it with an array of names.  We want to remove the names from the array that have 5 or less letters.  
 
 ```javascript
 // original array
@@ -162,7 +166,10 @@ var filteredNames = names.filter( function(name){
   return name.length > 5;   //only include those longer than 5 letters
 } );
 
-console.log(filteredNames);
+// assign filteredNames as the new value of names
+names = filteredNames;
+
+console.log(names);
 ```
 
 If you run this code you will see the output of:
@@ -171,11 +178,26 @@ If you run this code you will see the output of:
 [ 'Michael', 'Angelica']
 ```
 
-`Array.filter()` doesn't change the array.  It makes a new one according to a "rule" that you give it.  This rule is a function that you pass to `filter()`.  
+`Array.filter()` chooses the elements to include using a "rule" that you give it.  This rule is the function that you pass to `filter()`.  
 
-`filter()` runs the function once for each element of the array, passing the array element as a parameter.  Within that function you can do whatever you want to determine if you want to keep that element or not.  If the function returns `true` then that means the element should be kept.  `false` means don't keep the element.  
+`Array.filter()` runs that function once for each element of the array, passing the array element as a parameter.  Within that function you can do whatever you want to determine if you want to keep that element or not.  If the function returns `true` then that means the element should be kept.  `false` means don't keep the element.  
+
+You could also do the assignment and filter in one step like this:
+
+```javascript
+var names = [ 'Michael', 'Susan', 'Angelica', 'David', 'Joe'];
+
+names = names.filter( function(name){
+  return name.length > 5;
+} );
+
+console.log(names);
+```
+
+It is important to note that although `Array.filter()` runs this "rule" function for every element in the array it does them all at the same time.  This makes it fast even for very large arrays. 
 
 Remember `filter()` doesn't change the original array, it creates a new one with only the items to keep from the first.  So you will have to remember to explictily do something with your new array.
+
 
 ## Hints
 
@@ -183,6 +205,7 @@ Remember `filter()` doesn't change the original array, it creates a new one with
 2. It will be a DELETE request
 3. You'll need to use route parameters to indicate which post is to be deleted
 4. `Array.filter()` is an easy way to remove items from an array
+5. Don't forget you can use `console.log()` to check the values of variables.
 
 ## Solution
 
