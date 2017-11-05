@@ -6,10 +6,13 @@ title: Deleting Posts
 permalink: challenges/2/
 difficulty: 4
 keywords:
-  - term: URL parameters
-    define: URL parameters
+  - term: Route parameters
+    define: |
+      Route parameters are a way to create routes where specified parts of the URL can have any value, and you can access those values in the route's handler function.  [Express Routing Guide](https://expressjs.com/en/guide/routing.html)
   - term: DELETE request method
-    define: DELETE request method
+    define: |
+      The DELETE request method indicates that a request is intended to result in data being deleted by the server.
+       [MDN HTTP docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 ---
 
 This challenge adds the ability to delete posts to your app.
@@ -118,7 +121,7 @@ To implement the delete feature in the backend, you need to create an endpoint f
 
 ## Route Parameters
 
-Route parameters are a way to create routes where specified parts of the URL can have any value, and you can access their value in the route's handler function.  
+Route parameters are a way to create routes where specified parts of the URL can have any value, and you can access those values in the route's handler function.  
 
 You can do this by prefixing a URL segment (bit between each pair of `/`) with a colon `:`.
 
