@@ -28,4 +28,4 @@ Each **Challenge** adds new features to the app that you have to figure out how 
 
 **The Journey Continues** gives you some ideas about what you could go research next on your own.  There is such much to learn and this is only the tip of the iceberg.
 
-[Continue your Journey]('../journey_continues/'){: class="go-link" }
+[Continue your Journey]({{'/journey-continues/' | relative_url }}){: class="go-link" }
