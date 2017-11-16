@@ -1,10 +1,13 @@
 div.step-nav {
-  border: 1px solid #e7e7e7;
-  background-color: #efefef;
-  float: right;
+  // border: 1px solid #e7e7e7;
+  // background-color: #efefef;
+  border-right: 3px solid $nodegreen;
+  // float: right;
   max-width: 250px;
   font-size: 14px;
-
+  display: inline-block;
+  margin-right: 10px;
+  padding-top: 50px;
   h3 {
     font-size: 15px;
     font-weight: bold;

@@ -9,8 +9,6 @@ number: start
 
 <img src="assets/logo.png">
 
-{% include step-nav.html %}
-
 ## What is this?
 
 This is an introductory workshop to Node.js and Express Web Framework. 

@@ -207,6 +207,12 @@
 /**
  * Posts
  */
+ article.post {
+   vertical-align: top;
+   display: inline-block;
+   padding-left: 30px;
+ }
+ 
 .post-header {
   margin-bottom: $spacing-unit;
 }

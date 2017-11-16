@@ -7,10 +7,6 @@ layout: default
     <h2 class="post-title"> Step {{page.number}} - {{ page.title | escape }}</h1>
   </header>
 
-  <div class="nav">
-    {% include step-nav.html %}
-  </div>
-
   <div class="post-content">
     {{ content }}
     {% include page-nav.html %}
