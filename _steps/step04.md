@@ -1,7 +1,7 @@
 ---
 layout: step
 number: 4
-title: Communicating with the server
+title: Talking to the server
 permalink: step4/
 
 keywords:

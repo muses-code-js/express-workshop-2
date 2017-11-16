@@ -1,7 +1,7 @@
 ---
 layout: step
 number: 0
-title: Setting up your Environment
+title: Environment Setup
 permalink: step0/
 
 keywords:

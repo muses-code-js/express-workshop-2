@@ -1,10 +1,10 @@
 {% assign steps = site.steps | sort: "number" %}
 
 <div class="step-nav">
-  <ul>
-    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+  <ul class="main">
+    <li class="{% if page.url == '/' }} %}active{% endif %}"><a  href="{{ '/' | relative_url }}">Home</a></li>
   </ul>
-
+  
   <h3>Workshop Steps</h3>
   <ul>
   {% for step in steps %}
@@ -27,10 +27,11 @@
   {% endfor %}
   </ul>
 
-  <ul>
-    <li><a href="">The Journey Continues</a></li>
+  <ul class="main">
+    <li class="{% if page.url == '/journey-continues/' }} %}active{% endif %}"><a href="{{ '/journey-continues/' | relative_url }}">The Journey Continues</a></li>
   </ul>
 
+  
   <h3>Useful Links</h3>
   <ul>
   <li><a target="_blank" href="https://github.com/node-girls/what-is-node">What is Node?</a></li>
