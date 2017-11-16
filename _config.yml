@@ -24,7 +24,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
-theme: minima
+# theme: node-girls
 
 collections:
   steps:
@@ -32,6 +32,15 @@ collections:
   challenges:
       output: true
 
+challenge_separator: "<!--BREAK-->"
+challenge_difficulties:
+  - NONE
+  - Minor tweak of existing feature
+  - Adding new code derived from existing features
+  - Expands on existing concepts
+  - Introduces multiple new concepts
+  - Multiple new concepts.  Might need to some research.
+    
 plugins:
   - jekyll-feed
   - jemoji

@@ -1,25 +1,14 @@
 ---
-layout: step
+layout: challenge
 cnumber: 1
-end: true
 title: Mood Indicator
 permalink: challenges/1/
 difficulty: 1
 ---
 
-This challenge adds a menu to to pick a "mood" from a list when making a post.  That mood is then displayed on that post.
+This challenge adds a menu to to pick a "mood" (happy,sad, angry etc) from a list when making a post.  That mood is then displayed on that post.
 
-Here's how a challenge works:
-
-1. We give you the changes to the front-end and tell you where to insert them to enable the feature.
-2. We describe the expectations for the backend changes.
-3. We'll discuss the steps & things you need to understand to do this and give some hints.
-4. Then you have to implement the backend changes yourself.  
-
-You don't need to complete a challenge to do any of the ones after it. Do the ones you like.  The earlier ones are usually easier though.
-
-There will be a solution at the end.  But remember there is always more than one way of doing things. :smile:
-
+<!--BREAK-->
 
 ## 1. Enabling the UI
 

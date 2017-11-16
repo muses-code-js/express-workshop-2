@@ -1,7 +1,6 @@
 ---
-layout: step
+layout: challenge
 cnumber: 2
-end: true
 title: Deleting Posts
 permalink: challenges/2/
 difficulty: 4
@@ -19,17 +18,7 @@ keywords:
 
 This challenge adds the ability to delete posts to your app.
 
-Here's how a challenge works:
-
-1. We give you the changes to the front-end and tell you where to insert them to enable the feature.
-2. We describe the expectations for the backend changes.
-3. We'll discuss the steps & things you need to understand to do this and give some hints.
-4. Then you have to implement the backend changes yourself.  
-
-You don't need to complete a challenge to do any of the ones after it. Do the ones you like.  The earlier ones are usually easier though.
-
-There will be a solution at the end.  But remember there is always more than one way of doing things. :smile:
-
+<!--BREAK-->
 
 ## 1. Enabling the UI
 
