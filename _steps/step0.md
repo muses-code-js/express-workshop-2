@@ -129,10 +129,23 @@ Once Node.js is installed, open a terminal and enter the command `node --version
 
 ![Confirming Node.js install on Windows]({{ '/assets/step0-b.png' | relative_url }}){:title="Confirming Node.js install on Windows" class="img-responsive imgbox"}
 
-
 #### Install an Editor
 
+You are going to need a program to write your source code in.  We call that your editor.
+
+Any program that can edit plain text files will work, such as NotePad on Windows or TextEdit on macOS.  You cannot use a word processor like Microsoft Word, Apple's Pages, or OpenOffice.
+
+While NotePad or TextEdit will do the job, you can download free & open-source editors which provide some additional features to make writing program source code a little more pleasant.  
+
+If you are just getting started we recommend [Github's Atom](https://atom.io/)
+
+If you have used Microsoft's Visual Studio before you might like [Visual Studio Code](https://code.visualstudio.com/)
+
+These are both free, open-source, and available for Windows, macOS, and Linux.
+
 #### Install Git (Optional)
+
+Git is optional for this workshop if you are doing a local setup.  
 
 #### Download the workshop files 
 
