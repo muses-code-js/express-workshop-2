@@ -14,20 +14,20 @@ keywords:
 
 ---
 
-So now we have our webpage being served up, but you might notice that it doesn't actually do anything.  There are no posts displayed and clicking the "POST" button does nothing.  That's because both of those things in the page rely on the backend that we are writing and we haven't done that yet.
+So now we have our web page being served up, but you might notice that it doesn't actually do anything.  There are no posts displayed, and clicking the "POST" button does nothing.  That's because both of those things in the page rely on server code that we need to write.
 
-First up, lets display some posts.  
+First up, let's display some posts.  
 
 ## Creating our new route
 
-Our webpage expects there to be an endpoint that gives it a list of all the posts.  
+Our webpage already expects there to be an endpoint that gives it a list of all the posts.  
 
 It expects that endpoint to have the following:
 
  * Endpoint URL: `/get-posts`
  * Request Method: GET
 
-So we are going to need add a route for this endpoint.  Add the following code:
+So we are going to need to add a route for this endpoint.  Add the following code:
 
 ```javascript
 app.get('/get-posts', function(request, response){
@@ -35,19 +35,21 @@ app.get('/get-posts', function(request, response){
 });
 ```
 
-This should go between your `app.use(express.static())` and `app.listen()`.
+This should go between `app.use(express.static())` and `app.listen()` in your `server.js` file.
+
+Note that the handler function here doesn't do anything yet.
 
 ## Reading the posts.json file
 
-Our posts are stored in the file `data/posts.json`.  You don't need to worry too much about what is in this file yet, but it is where we are going to store our posts and there is actually already one in there.
+There is a post already stored in the `data/posts.json` file. We want to store other posts here, too, but you don't need to worry about that yet - all you need to know is that this file has a post inside it.
 
-In our `/get-posts` handler function we need to read that file from disk and send that data as our response.
+If we want our `/get-posts` route's handler function to display posts, we need to read the `data/posts.json` file from disk and send the data in it as our response.
 
 ## The fs module
 
 To read and write files we use the File System module `fs`.  
 
-`fs` is included in Node.js but we still need to use `require` to import it.
+`fs` is included in Node.js but we still need to use `require` to import it into our app.
 
 Add the following to the top of `server.js` to import `fs`:
 
@@ -61,7 +63,7 @@ The `fs` module has a lot of functions for dealing with files.
 
 We are going to use `fs.readFile()`.
 
-`fs.readFile()` takes two arguments:
+`fs.readFile()` takes two parameters:
 
 1. The path of the file to read from.
 2. A **callback** function to run after the file is read successfully.
@@ -73,12 +75,12 @@ fs.readFile(__dirname+'/data/posts.json', function(error, data){
 });
 ```
 
-`__dirname` is a special Node.js variable that contains the path of the folder where you program was run from.
+`__dirname` is a special Node.js variable that holds the path of the folder where your program is running.
 
-The arguments sent to the callback function are:
+The parameters sent to the callback function are:
 
-1. An error object or `null` if no error occurred.
-2. A contents of the file as a **buffer** or `null` if there was an error.
+1. An error object, or `null` if no error occurred.
+2. A contents of the file as a **buffer**, or `null` if there was an error.
 
 The content of `data` is in a format called a **buffer**.  If you log it, it will look something like this:
 
@@ -86,15 +88,15 @@ The content of `data` is in a format called a **buffer**.  If you log it, it wil
 <Buffer 7b 0a 20 20 20 20 22 31 34 36 37 33 39 30 33 35 36 32 39 31 22 3a 20 22 54 68 69 73 20 69 73 20 6d 79 20 76 65 72 79 20 66 69 72 73 74 20 62 6c 6f 67 ... >
 ```
 
-A buffer isn't very useful for us here but we can invoke `.toString()` on it and get human-readable text version of the file.
+A buffer isn't very useful for us here but we can invoke `.toString()` on it and get a human-readable text version of the file.
 
 ## Sending the response in our callback function
 
 In our callback function we will do the following steps:
 
 1. Check if there was an error
-2. If there was an error we log it and send back an error response.  
-3. Otherwise we convert our data buffer to a string and send that as the response.
+2. If there was an error, log it and send back an error response.  
+3. Otherwise, convert our data buffer to a string and send that as the response.
 
 Update your route to look like the following:
 
@@ -112,9 +114,9 @@ app.get('/get-posts', function(request, response){
 });
 ```
 
-We indicate that an error occurred by setting `response.status`.  `200` is the default value and means "everything worked as expected".  `500` means "OMG something failed that we didn't expect".  We use `500` here because we really don't expect this to fail.  
+We indicate that an error occurred by setting `response.status`.  `200` is the default value and means "everything worked as expected".  `500` means "OMG something failed that we didn't expect".
 
-In real world apps you should check for things like whether the file is there first, has the right permissions or if the content is what is expected, and then use an appropriate status code and message.  We aren't going to worry about that here.
+We use `500` here because we really don't expect this to fail. In real world apps you should check for things like whether the file exists, has the right permissions, or has the content we expect, and then use an appropriate status code and message.  We aren't going to worry about that here.
 
 ## Check that it worked
 
@@ -152,7 +154,7 @@ app.get('/get-posts', function(request, response){
 });
 
 app.listen(8080, function () {
-  console.log('Server has started listening on port 8080. ');
+  console.log('Server has started listening on port 8080.');
 });
 ```
 {: .solution }
