@@ -86,7 +86,7 @@ To add these changes do the following steps:
     Insert the following code after that line:
 
     ```html
-    <div class="mood-select">I"m feeling:
+    <div class="mood-select">I'm feeling:
       <select name="mood">
         <option value="0">None</option>
         <option value="1">😃 Happy</option>
