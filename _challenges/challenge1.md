@@ -183,4 +183,4 @@ app.post("/create-post", function(request, response){
 ```
 {: .solution }
 
-Remember just because your solution doesn't look exactly like this one doesn't mean that it is wrong.  The important question is whether it works or not.  If your answer is very different you might want to ask a mentor in case you might be doing something that looks like it works but will create problems for you later.
+Remember just because your solution doesn't look exactly like this one doesn't mean that it is wrong.  The important question is whether it works or not.  If your answer is very different you might want to ask a mentor in case you are doing something that looks like it works but will create problems for you later.
