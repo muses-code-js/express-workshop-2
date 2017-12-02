@@ -45,7 +45,7 @@ To add these changes do the following steps:
      font-size: 20px;
      display: inline-block;
     }
-    
+
     @media screen and (max-width: 600px) {
       div.mood-select {
         margin: 15px 20px 0px 20px;
@@ -58,22 +58,22 @@ To add these changes do the following steps:
     Find the line `// 2. insert mood display here`.
 
     Insert the following code after that line:
-    
+
     ```javascript
     var moodNames = [
-      '',
-      '<span class="emoji">😃</span> Happy',
-      '<span class="emoji">😛</span> Joking',
-      '<span class="emoji">😢</span> Sad',
-      '<span class="emoji">😔</span> Regretful',
-      '<span class="emoji">😡</span> Angry',
-      '<span class="emoji">😲</span> Suprised',
-      '<span class="emoji">😎</span> Smug',
-      '<span class="emoji">👑</span> Triumphant',
-      '<span class="emoji">😍</span> In love' 
+      "",
+      "<span class='emoji'>😃</span> Happy",
+      "<span class='emoji'>😛</span> Joking",
+      "<span class='emoji'>😢</span> Sad",
+      "<span class='emoji'>😔</span> Regretful",
+      "<span class='emoji'>😡</span> Angry",
+      "<span class='emoji'>😲</span> Suprised",
+      "<span class='emoji'>😎</span> Smug",
+      "<span class='emoji'>👑</span> Triumphant",
+      "<span class='emoji'>😍</span> In love"
     ];
-    var moodDiv = document.createElement('div');
-    moodDiv.className = 'mood';
+    var moodDiv = document.createElement("div");
+    moodDiv.className = "mood";
     moodDiv.innerHTML = moodNames[post.mood];
     postText.append(moodDiv);
     ```
@@ -86,18 +86,18 @@ To add these changes do the following steps:
     Insert the following code after that line:
 
     ```html
-    <div class="mood-select">I'm feeling:
-      <select name="mood">
-        <option value="0">None</option>
-        <option value="1">😃 Happy</option>
-        <option value="2">😛 Joking</option>
-        <option value="3">😢 Sad</option>
-        <option value="4">😔 Regretful</option>
-        <option value="5">😡 Angry</option>
-        <option value="6">😲 Suprised</option>
-        <option value="7">😎 Smug</option>
-        <option value="8">👑 Triumphant</option>
-        <option value="9">😍 In love</option>
+    <div class='mood-select'>I'm feeling:
+      <select name='mood'>
+        <option value='0'>None</option>
+        <option value='1'>😃 Happy</option>
+        <option value='2'>😛 Joking</option>
+        <option value='3'>😢 Sad</option>
+        <option value='4'>😔 Regretful</option>
+        <option value='5'>😡 Angry</option>
+        <option value='6'>😲 Suprised</option>
+        <option value='7'>😎 Smug</option>
+        <option value='8'>👑 Triumphant</option>
+        <option value='9'>😍 In love</option>
       </select>
     </div>
     ```
@@ -111,9 +111,9 @@ It will look like this:
 With the above changes, the webpage now does the following:
 
 1. When creating a new post, it sends a value of 0 to 9 as the field `mood` as part of the form data.
-2. Expects the blogpost objects retreived from `/get-posts` to each have a mood property, with a value of 0 to 9, for which it displays the corresponding mood emoji and description.
+2. Expects the blogpost objects retrieved from `/get-posts` to each have a mood property, with a value of 0 to 9, for which it displays the corresponding mood emoji and description.
 
-Once properly implemented posts with a mood set with look like this:
+Once properly implemented posts with a mood set will look like this:
 
 ![Post with Mood set]({{'/assets/challenge-2b.png' | relative_url }}){:title="Post with Mood set" class="img-responsive imgbox"}
 
@@ -146,7 +146,7 @@ If you get stuck or just want to compare with your answer click below to see our
 Note that this solution only shows the endpoint in question, not all of `server.js`.
 
 ```javascript
-app.post('/create-post', function(request, response){
+app.post("/create-post", function(request, response){
   var now = Date.now();
   var newPost = {
     timestamp: now,
@@ -154,9 +154,9 @@ app.post('/create-post', function(request, response){
     mood: request.fields.mood
   }
 
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
+  fs.readFile(__dirname+"/data/posts.json", function(error, data){
     if(error){
-      console.log('Error reading posts.json: '+error);
+      console.log("Error reading posts.json: "+error);
       response.status(500);
       response.send(error);
     } else {
@@ -168,9 +168,9 @@ app.post('/create-post', function(request, response){
       console.log(posts);
       console.log(updatedData);
 
-      fs.writeFile(__dirname+'/data/posts.json', updatedData, function(error){
+      fs.writeFile(__dirname+"/data/posts.json", updatedData, function(error){
         if(error){
-          console.log('Error writing posts.json: '+error);
+          console.log("Error writing posts.json: "+error);
           response.status(500);
           response.send(error);
         } else {
@@ -183,4 +183,4 @@ app.post('/create-post', function(request, response){
 ```
 {: .solution }
 
-Remember just because your solution doesn't look exactly like this one doesn't mean that it is wrong.  The important question is whether it works or not.  If your answer is very different you might want to ask a mentor incase you might be doing something that looks like it works but will create problems for you later.
+Remember just because your solution doesn't look exactly like this one doesn't mean that it is wrong.  The important question is whether it works or not.  If your answer is very different you might want to ask a mentor in case you might be doing something that looks like it works but will create problems for you later.
