@@ -19,24 +19,29 @@ keywords:
 ---
 Ok before you get started coding you need to setup all the things that you are going to need.
 
-We need:
+To create software using Node.js you need three things:
 
- - Node.js dev Environment
-    - The Node.js **runtime**
-    - An appropriate editor
-    - A terminal (to run commands)
+1. The Node.js **runtime**
+2. An editor
+3. A command-line terminal (to run commands in)
 
-- Also we will setup a Github account.  
-  
+You *can* download and setup these things on your own computer but it can be tricky and time consuming even if you have experience doing this kind of thing.  It depends a lot of your computer and what Operating System and other software you already have installed.  
+
+To save time, we recommend using [Cloud9](https://c9.io), an online service that provides all of those things preconfigured as a web application.
+
+Additionally, in order to make Cloud9 a little easier to setup we ask you to create a GitHub account 
+
+We'll step you through the entire process below.  We also provide the basics on how to setup your own machine if you want to take that route. 
+
 ## GitHub
 
-[GitHub.com](https://github.com) is a web site that makes it really easy for multiple people to share and work on the same projects together using a program called **Git**.  Git provides you with a way of tracking all the changes that you make to your project.
+[GitHub.com](https://github.com) is a web site that makes it really easy for multiple people to share and work on the same projects together using a program called **Git**.  Git provides you with a way of tracking all the changes that you make to your project.  Git is a pretty big topic that we aren't going to go into here, so don't worry too much about understanding it right now.  
 
-Git is a pretty big topic that we aren't going to explain too much here. We are just going to use it to make a couple of things a bit easier to setup.  
+The workshop files are hosted in GitHub.  We'll create a GitHub account & "fork" the NodeGirls' `express-workshop-2` repository.  This means you will get a copy of all the workshop files in your GitHub account.  Repostory is just another name for a collection of files and folders being managed by Git.  Then when you setup your Cloud9 workspace you can point it at this repository to access the files. 
+ 
+By the way, Git is *very* popular and widely used both in companies and open-source projects,  so we highly recommend that you spend some time learning about it after the workshop.
 
-So don't worry too much about understanding all the git stuff right now.  That said however, git is *very* popular and widely used both in companies and open-source projects,  so we highly recommend that you spend some time learning about it after the workshop.
 
-We are going to create a GitHub account & "fork" the `express-workshop-2` repository.  This means you will get a copy of all the workshop files in your GitHub account.  Repostory is just another name for a set of files and folders being managed by Git.
 
 ### Create a GitHub Account
 
@@ -51,29 +56,16 @@ This will take a moment, and then you will be redirected to your new copy of the
 
 Don't worry too much if you didn't understand what happened there.  The key thing is that you now have a copy of the workshop files in GitHub.
 
-## Development Environment
-
-To create software using Node.js you need three things:
-
-1. The Node.js **runtime**
-2. An editor
-3. A command-line terminal (to run commands in)
-
-You *can* download and setup these things on your own computer but it can be tricky and time consuming even if you have experience doing this kind of thing.  It depends a lot of your computer and what Operating System and other software you already have installed.  
-
-To save time, we recommend using [Cloud9](https://c9.io), an online service that provides all of those things preconfigured as a web application.
-
-
-### Cloud9
+## Cloud9
 
 Cloud9 is a web site that provides an online development for several languages including Node.js.  You can access it using just a web browser which makes it really easy to get started. 
 
-#### Create a Cloud9 account
+### Create a Cloud9 account
 
 1. Ask a mentor to send you an invite to the Node Girls Cloud9 team.  This only takes a few minutes.
 2. When you receive the invitation email, click on the link and follow the promps to setup an account.
 
-#### Connect Cloud9 to GitHub
+### Connect Cloud9 to GitHub
 Once you are logged into your Cloud9 account, you can connect it to your GitHub account so you can use Cloud9 to access your copy of the workshop.
 
 1. Click repositories.  
@@ -81,7 +73,7 @@ Once you are logged into your Cloud9 account, you can connect it to your GitHub 
 
 Now the Repositories page should should a list of your GitHub repositories including your `express-workshop-2` repository.
 
-#### Creating a Cloud9 Workspace
+### Creating a Cloud9 Workspace
 
 Workspaces are how Cloud9 organises projects.  Think of each workspace as the UI for interacting with your project, editing the files and running commands etc.
 
@@ -105,48 +97,5 @@ The three main areas you need to know about are:
 3. The **terminal tab** at the bottom.  This is the command line space where you will run various commands during the workshop such as installing packages and running your code.
 
 You can rearrange this space as you see fit, and also add and remove items from it.  If you need to get back to the original layout, you can do this by going to the main menu and selecting `Window -> Presets -> Full IDE`.  
-
-### Local Machine
-
-If you want to take the leap of setting things up on your own computer, you will need to do the following:
-
-1. Install Node.js
-2. Install an Editor
-3. Install Git (Optional)
-4. Download the workshop files
-
-#### Install Node.js
-
-You can download the Node.js installer from <https://nodejs.org/en/download/>  
-
-Download it, run it and follow the prompts.
-
-There are installers for Windows, macOS & Linux.  Linux users should check if their distro includes a Node.js package for easy installation.
-
-The most recent version of Node.js at time of writing is 8.  However any release of 6 or greater should work fine.
-
-Once Node.js is installed, open a terminal and enter the command `node --version` to verify that it is installed correctly.
-
-![Confirming Node.js install on Windows]({{ '/assets/step0-b.png' | relative_url }}){:title="Confirming Node.js install on Windows" class="img-responsive imgbox"}
-
-#### Install an Editor
-
-You are going to need a program to write your source code in.  We call that your editor.
-
-Any program that can edit plain text files will work, such as NotePad on Windows or TextEdit on macOS.  You cannot use a word processor like Microsoft Word, Apple's Pages, or OpenOffice.
-
-While NotePad or TextEdit will do the job, you can download free & open-source editors which provide some additional features to make writing program source code a little more pleasant.  
-
-If you are just getting started we recommend [Github's Atom](https://atom.io/)
-
-If you have used Microsoft's Visual Studio before you might like [Visual Studio Code](https://code.visualstudio.com/)
-
-These are both free, open-source, and available for Windows, macOS, and Linux.
-
-#### Install Git (Optional)
-
-Git is optional for this workshop if you are doing a local setup.  
-
-#### Download the workshop files 
 
 
