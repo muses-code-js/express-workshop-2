@@ -102,7 +102,7 @@ To add these changes do the following steps:
     </div>
     ```
 
-Make sure you save those changes & refresh the web page.  You should see the "Mood" menu near the `POST` button.
+Make sure you save those changes and refresh the web page.  You should see the "Mood" menu near the `POST` button.
 
 It will look like this:
 

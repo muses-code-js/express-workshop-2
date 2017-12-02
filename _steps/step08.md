@@ -19,13 +19,13 @@ keywords:
 
 Ok we've got our form data.  The next thing we need to do is construct the object that will hold that data.  This is the object that we will be adding to our saved data and that we will be sending back as the response.
 
-The frontend expects the `/create-post` endpoint to send back the object that we will be adding to our `posts.json` file.
+The client expects the `/create-post` endpoint to send back the object that we will be adding to our `posts.json` file.
 
 ## Making a new post object
 
 Our blog post objects have two fields: `timestamp` and `content`.
 
-**timestamp** is a number that tells us the exact time that the post was made.  It's actually the number of milliseconds since 1 January 1970 (UTC).  We can get this value using the function `Date.now()`.
+**timestamp** is a number that tells us the exact time that the post was made.  It's actually a number instead of anything you will recognise as a date - the number of milliseconds since 1 January 1970 (UTC).  We can get this value using the function `Date.now()`.
 
 **content** is the post that was sent.  We get that from `request.fields.blogpost`.
 
@@ -66,7 +66,7 @@ app.post('/create-post', function(request, response){
 });
 ```
 
-The frontend expects the response to contain the object converted into a JSON string.  `response.send()` automatically does that conversion for you if you pass it an object.  
+The client expects the response to contain the object converted into a JSON string.  `response.send()` automatically does that conversion for you if you pass it an object.  
 
 ## Test it out
 
@@ -76,7 +76,7 @@ You should see your new posts added to the page.
 
 ![Checking new post is added to the page in the Browser](../assets/step8-b.png){:class="img-responsive imgbox" title="Checking new post is added to the page in the Browser"}
 
-But remember that we haven't actually saved the new post yet so if you refresh the page they all disappear.  
+But remember that we haven't actually saved the new post yet - if you refresh the page, they all disappear.  
 
 If it isn't working for you, you can double-check that your code is right with the solution below:
 
@@ -112,7 +112,7 @@ app.get('/get-posts', function(request, response){
 });
 
 app.listen(8080, function () {
-  console.log('Server has started listening on port 8080. ');
+  console.log('Server has started listening on port 8080.');
 });
 ```
 {: .solution }
