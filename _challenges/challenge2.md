@@ -53,8 +53,8 @@ To add these changes do the following steps:
 
     ```javascript
     function deletePost (timestamp) {
-      fetch('/delete-post/'+timestamp, {
-          method: 'DELETE'
+      fetch("/delete-post/"+timestamp, {
+          method: "DELETE"
       })
       .then(function (res) {
           res.json()
@@ -64,12 +64,12 @@ To add these changes do the following steps:
               element.outerHTML = "";
               delete element;
             } else {
-              alert('Delete failed!');
+              alert("Delete failed!");
             }
           });
       })
       .catch(function (err) {
-        alert('Delete failed!\n\n'+err);
+        alert("Delete failed!\n\n"+err);
       });
     }
     ```
@@ -81,14 +81,14 @@ To add these changes do the following steps:
     Insert the following code after that line:
 
     ```javascript
-    var delButton = document.createElement('div');
+    var delButton = document.createElement("div");
     delButton.onclick = function(){
-      if (confirm('Are you sure you want to delete this post?  You can\'t undo this.')){
+      if (confirm("Are you sure you want to delete this post?  You can\'t undo this.")){
         deletePost(post.timestamp);
       }
     }
-    delButton.className = 'delButton'
-    delButton.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i> Delete';
+    delButton.className = "delButton"
+    delButton.innerHTML = "<i class='fa fa-trash-o' aria-hidden='true'></i> Delete";
     postDetail.appendChild(delButton);
     ```
 
@@ -96,7 +96,7 @@ Make sure you save those changes & refresh the web page.  You should see the del
 
 It will look like this:
 
-![Delete feature enabled]({{'/assets/challenge-1a.png' | relative_url }}){:title="Delete feature enabled" class="img-responsive imgbox"}
+![Delete feature enabled]({{"/assets/challenge-1a.png" | relative_url }}){:title="Delete feature enabled" class="img-responsive imgbox"}
 
 ## Backend Specification
 
@@ -121,8 +121,8 @@ Each of those route parameters will be available as a property of `request.param
 As an example:
 
 ```javascript
-app.get('/say/:name/:phrase', function(request, response){
-  response.send(request.params.name + ' says "'+request.params.phrase+'"' );
+app.get("/say/:name/:phrase", function(request, response){
+  response.send(request.params.name + " says \""+request.params.phrase+"\"" );
 });
 ```
 
@@ -130,7 +130,7 @@ app.get('/say/:name/:phrase', function(request, response){
 
 `/say/sarah` will not match this route.
 
-Route parameters are a great way to both use the URL to pass information in the request, and to make your apps URL's more meaningful.
+Route parameters are a great way to both use the URL to pass information in the request, and to make your app's URLs more meaningful.
 
 ## The DELETE request method
 
@@ -144,11 +144,11 @@ There are several different techniques you can use to remove items from an array
 
 `Array.filter()` lets you makes a new array by taking an existing one and choosing elements from it to include in the new one.  You can then use that array in place of the old one.  
 
-Lets demonstrate it with an array of names.  We want to remove the names from the array that have 5 or less letters.  
+Let's demonstrate it with an array of names.  We want to remove the names from the array that have 5 or fewer letters.  
 
 ```javascript
 // original array
-var names = [ 'Michael', 'Susan', 'Angelica', 'David', 'Joe'];
+var names = [ "Michael", "Susan", "Angelica", "David", "Joe"];
 
 // making a new array using filter
 var filteredNames = names.filter( function(name){
@@ -164,7 +164,7 @@ console.log(names);
 If you run this code you will see the output of:
 
 ```
-[ 'Michael', 'Angelica']
+[ "Michael", "Angelica"]
 ```
 
 `Array.filter()` chooses the elements to include using a "rule" that you give it.  This rule is the function that you pass to `filter()`.  
@@ -174,7 +174,7 @@ If you run this code you will see the output of:
 You could also do the assignment and filter in one step like this:
 
 ```javascript
-var names = [ 'Michael', 'Susan', 'Angelica', 'David', 'Joe'];
+var names = [ "Michael", "Susan", "Angelica", "David", "Joe"];
 
 names = names.filter( function(name){
   return name.length > 5;
@@ -183,9 +183,9 @@ names = names.filter( function(name){
 console.log(names);
 ```
 
-It is important to note that although `Array.filter()` runs this "rule" function for every element in the array it does them all at the same time.  This makes it fast even for very large arrays. 
+It is important to note that although `Array.filter()` runs this "rule" function for every element in the array it does them all at the same time.  This makes it fast even for very large arrays.
 
-Remember `filter()` doesn't change the original array, it creates a new one with only the items to keep from the first.  So you will have to remember to explictily do something with your new array.
+Remember `filter()` doesn't change the original array, it creates a new one with only the items to keep from the first.  So you will have to remember to explicitly do something with your new array.
 
 
 ## Hints
@@ -203,12 +203,12 @@ If you get stuck or just want to compare with your answer click below to see our
 Note that this solution only shows the endpoint in question, not all of `server.js`.
 
 ```javascript
-app.delete('/delete-post/:timestamp', function(request, response){
+app.delete("/delete-post/:timestamp", function(request, response){
 
   // read our file in
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
+  fs.readFile(__dirname+"/data/posts.json", function(error, data){
     if(error){
-      console.log('Error reading posts.json: '+error);
+      console.log("Error reading posts.json: "+error);
       response.status(500);
       response.send(error);
     } else {
@@ -221,9 +221,9 @@ app.delete('/delete-post/:timestamp', function(request, response){
 
       // stringify and write to disk
       updatedData = JSON.stringify(posts);
-      fs.writeFile(__dirname+'/data/posts.json', updatedData, function(error){
+      fs.writeFile(__dirname+"/data/posts.json", updatedData, function(error){
         if(error){
-          console.log('Error writing posts.json: '+error);
+          console.log("Error writing posts.json: "+error);
           response.status(500);
           response.send(error);
         } else {
