@@ -36,15 +36,15 @@ keywords:
 
 Since we are going to be building a server, we should probably talk about what a server *is*.
 
-A **server** is a computer program that provides some kind of functionality to other programs (called **clients**). The client and server programs are often (but not always) running on different computers.  We often also refer to the computer that the server software is running on as a server too.
+A **server** is a computer program that provides some kind of functionality to other programs (called **clients**). The client and server programs are often (but not always) running on different computers.  We often refer to the computer that the server software is running on as a server, too.
 
 ![Server flow](../assets/step3-a.png){:class="img-responsive imgbox" title="Server flow"}
 
-A server "listens" for requests sent to it from clients.  Depending on the request the server may perform some kind of work and then send a response back to the client.  For example, client might send a request for information that the server looks up in a database and then sends back as the response.  If the server cannot fulfil the request for some reason then the response could be an error message like the famous *'Error 404: File not found.'*  
+A server "listens" for requests sent to it from clients.  Depending on the request, the server may perform some kind of work and then send a response back to the client.  For example, a client might send a request for information that the server looks up in a database and then sends back as the response.  If the server cannot fulfill the request for some reason then the response could be an error message like the famous *'Error 404: File not found.'*  
 
 This idea of having server programs that respond to requests from server programs is called a **client/server architecture**.  It works because both the clients and the servers use the same format for the requests and responses.  This agreed upon format is called the **protocol**.
 
-Client/server architecture is used when you have a resource that you need multiple different users to access at the same time.  Instead of sending the resource to all the users (eg. on a CDROM) you keep the resource on in one place and use a server to allow clients to access it.  There are many benefits to doing this like how easy it is to update the shared resource.
+Client/server architecture is used when you have a resource that you need multiple different users to access at the same time.  Instead of sending the resource to all the users (e.g. on a CD-ROM) you keep the resource on in one place and use a server to allow clients to access it.  There are many benefits to doing this like how easy it is to update the shared resource.
 
 The application we are creating is a **web server**.  The client is your web browser.  They use the `http` protocol to communicate.  The browser sends requests to the server using URLs to indicate what it wants from the server.
 
@@ -106,7 +106,7 @@ var app = express();
     var app = express();
 
     app.listen(8080, function () {
-      console.log('Server has started listening on port 8080. ');
+      console.log('Server has started listening on port 8080.');
     });
     ```
 
@@ -134,10 +134,10 @@ If you see this, congratulations! :clap: :clap: You have built yourself a server
 
 ## About console.log()
 
-Currently, your server is doing nothing but printing the message `Server has started listening on port 8080.` using the `console.log()` function.
+Right now, your server is doing one thing: using the `console.log()` function to print the message `Server has started listening on port 8080.`
 
-`console.log()` is used to display messages in the terminal (AKA the console) that your application is running from.  We refer to these as "console" or "log" messages.  These messages are commonly used to display status information or serious error messages from your program as it is running.  They are only displayed in the terminal where your application is running, the users of your app will not see them.
+The `console.log()` function displays messages in the terminal, also known as the console. We call these 'console' or 'log' messages, and they only appear in the terminal where your application is running - users of your app don't see them.
 
-We also use `console.log()` when debugging our app.  When something didn't work as you expected, you can temporarily add `console.log()` statements to your program to check the value of variables etc so see what is really going on.  These lines are then removed once we have fixed the problem.
+When an app is complete, we generally use log messages to display status information and error messages from our program. While we're still building the app, though, we can also use `console.log()` to look into what the program is doing while it runs. For example, we can use `console.log()` to check the value of a variable before and after an operation to make sure that our program is doing what we expect it to do.
 
-We'll frequently add lines like this in this workshop so you can see what is happening behind the scenes.  
+This workshop uses `console.log()` a lot to make sure you can see what is happening in each part of the code. You can remove them if you like - just remember that `console.log()` is useful when you're trying to debug a problem.
