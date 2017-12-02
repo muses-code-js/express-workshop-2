@@ -8,7 +8,7 @@ keywords:
     define: A format for storing and transporting data. Read more [here](http://www.w3schools.com/js/js_json.asp). Or for more detailed docs [read this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 ---
 
-As we saw in the previous step, we need to actually save our new post otherwise it is just temporary.
+As we saw in the previous step, we need to actually save our new post, otherwise it is just a temporary page update.
 
 All of our posts are saved in the file `data/posts.json`.
 
@@ -52,9 +52,10 @@ app.post('/create-post', function(request, response){
 
 Notice how we've moved the `response.send(newPost)` inside of the `fs.readFile()` callback?  
 
-This is because `fs.readFile()` is a non-blocking function.  Anything that we put after `fs.readFile()` is going to happen immediately after `fs.readFile()` starts, and almost certainly before it finishes.  If we want to ensure that certain code doesn't run until after a non-blocking function finishes then we must but that code inside of the non-blocking function's callback function.
+This is because `fs.readFile()` is a non-blocking function.  Anything that we put after `fs.readFile()` is going to happen immediately after `fs.readFile()` starts, and almost certainly before it finishes.  If we want to ensure that certain code doesn't run until after a non-blocking function finishes then we must put that code *inside* the non-blocking function's callback function.
 
-In other words, if we don't want to send our response before finishing reading the file, which we don't want,  then we must send the response inside of the `fs.readFile()` function's callback function.
+In other words, if we don't want to send our response before finishing reading the file - and we definitely don't want this here - then we must send the response inside of the `fs.readFile()` function's callback function.
+
 ## What's in our posts.json file?
 
 So now that we have read our file from disk, let's have a look at it.
@@ -74,13 +75,13 @@ Open up `data/posts.json` in an editor.  It will look something like:
 
 This format is called JSON (sounds like Jason) and it stands for Javascript Object Notation.
 
-JSON is a way of describing Javascript objects as text independantly of Javascript code.  Javascript provides both a way to create JSON versions of your objects, and to take JSON text and turn it into objects.  This makes it really easy to do things like send data between programs or it to disk (and read it back).  You have already used it twice without realising it, both `/get-posts` and `/create-post` send JSON data.  Your project's `package.json` file is in JSON format too also.
+JSON is a way of describing Javascript objects as text independently of Javascript code.  Javascript provides both a way to create JSON versions of your objects, and a way to take JSON text and turn it into objects.  This makes it really easy to do things like send data between programs or write it to disk (and read it back).  You have already used it twice without realising it, both `/get-posts` and `/create-post` send JSON data.  Your project's `package.json` file is in JSON format too.
 
-JSON is supported by many other programming languages and has become a defacto way to send data between programs on the internet.
+JSON is supported by many other programming languages and has become a common way to send data between programs on the internet.
 
 There are only a few simple rules in JSON:
- * `{` & `}` indicate the start and end of an object.
- * `[` & `]` indicate an array (list) of values where each value is separated by a comma
+ * `{` and `}` indicate the start and end of an object.
+ * `[` and `]` indicate an array (list) of values where each value is separated by a comma
  * Objects have a comma-separated list of properties with the format: `"name": value`
  * A value can be a string, number, array or object.  
  * If a value is a string it must be enclosed by `"` characters.
@@ -90,7 +91,7 @@ So if we look at our `posts.json` file and apply those rules we can see that:
 1. A single object (the `{}` characters at the beginning and end).
 2. That object has one property, `blogposts`, whose value is an array
 3. That array contains (currently) a single object
-4. That object has two properties, `timestamp` & `content`
+4. That object has two properties, `timestamp` and `content`
 
 The object in the `blogposts` array is the post that we are currently seeing in the page.  Of course it has the same properties as the post object we sent back in the previous step.  What we will be doing is adding our new post object to this array.
 
@@ -128,15 +129,15 @@ console.log(posts.blogposts[0].content);
 console.log(posts.blogposts.length);
 ```
 
-Check it out by restarting your server & hitting the post button again & watching your terminal.
+Check it out by restarting your server, hitting the post button again, and watching your terminal output.
 
 ## Add our new post to the array
 
-Ok so now we have our data from the file parsed and available to be manipulated. And we have the object that represents our new post.  So lets get them together.
+Now we have our data from the file parsed and available to be manipulated. And we have the object that represents our new post.  So let's put them together.
 
 We need to add our object to the blogposts array.
 
-Arrays provide a bunch of different functions to make changes to them.
+Arrays provide a bunch of different functions to make changes to their structure and data.
 
 We are going to use `push()` to add `newPost` to the end of `posts.blogposts`.
 
@@ -148,7 +149,7 @@ posts.blogposts.push(newPost);
 
 The `push()` method adds one or more elements to the end of an array and returns the new array.
 
-To test this add a `console.log(posts.blogposts)`, (restart your server), and create a new post.  You should see the updated array logged in the terminal with your new post object.
+To test this add a `console.log(posts.blogposts)`, restart your server, and create a new post.  You should see the updated array logged in the terminal with your new post object.
 
 ![Checking our modified blogposts array in the Terminal](../assets/step9-b.png){:class="img-responsive imgbox" title="Checking our modified blogposts array in the Terminal"}
 
@@ -202,7 +203,7 @@ app.get('/get-posts', function(request, response){
 });
 
 app.listen(8080, function () {
-  console.log('Server has started listening on port 8080. ');
+  console.log('Server has started listening on port 8080.');
 });
 ```
 {: .solution }

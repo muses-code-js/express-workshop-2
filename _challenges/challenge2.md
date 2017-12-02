@@ -92,7 +92,7 @@ To add these changes do the following steps:
     postDetail.appendChild(delButton);
     ```
 
-Make sure you save those changes & refresh the web page.  You should see the delete link at the bottom of each post.
+Make sure you save those changes and refresh the web page.  You should see the delete link at the bottom of each post.
 
 It will look like this:
 
