@@ -61,7 +61,7 @@ To add these changes do the following steps:
           .then(function (json) {
             if(json.success){
               var element = document.getElementById(timestamp);
-              element.outerHTML = "";
+              element.outerHTML = '';
               delete element;
             } else {
               alert('Delete failed!');
@@ -92,11 +92,11 @@ To add these changes do the following steps:
     postDetail.appendChild(delButton);
     ```
 
-Make sure you save those changes & refresh the web page.  You should see the delete link at the bottom of each post.
+Make sure you save those changes and refresh the web page.  You should see the delete link at the bottom of each post.
 
 It will look like this:
 
-![Delete feature enabled]({{'/assets/challenge-1a.png' | relative_url }}){:title="Delete feature enabled" class="img-responsive imgbox"}
+![Delete feature enabled]({{"/assets/challenge-1a.png" | relative_url }}){:title="Delete feature enabled" class="img-responsive imgbox"}
 
 ## Backend Specification
 
@@ -130,7 +130,7 @@ app.get('/say/:name/:phrase', function(request, response){
 
 `/say/sarah` will not match this route.
 
-Route parameters are a great way to both use the URL to pass information in the request, and to make your apps URL's more meaningful.
+Route parameters are a great way to both use the URL to pass information in the request, and to make your app's URLs more meaningful.
 
 ## The DELETE request method
 
@@ -144,7 +144,7 @@ There are several different techniques you can use to remove items from an array
 
 `Array.filter()` lets you makes a new array by taking an existing one and choosing elements from it to include in the new one.  You can then use that array in place of the old one.  
 
-Lets demonstrate it with an array of names.  We want to remove the names from the array that have 5 or less letters.  
+Let's demonstrate it with an array of names.  We want to remove the names from the array that have 5 or fewer letters.  
 
 ```javascript
 // original array
@@ -183,9 +183,9 @@ names = names.filter( function(name){
 console.log(names);
 ```
 
-It is important to note that although `Array.filter()` runs this "rule" function for every element in the array it does them all at the same time.  This makes it fast even for very large arrays. 
+It is important to note that although `Array.filter()` runs this "rule" function for every element in the array it does them all at the same time.  This makes it fast even for very large arrays.
 
-Remember `filter()` doesn't change the original array, it creates a new one with only the items to keep from the first.  So you will have to remember to explictily do something with your new array.
+Remember `filter()` doesn't change the original array, it creates a new one with only the items to keep from the first.  So you will have to remember to explicitly do something with your new array.
 
 
 ## Hints

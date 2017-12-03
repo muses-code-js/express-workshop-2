@@ -12,13 +12,13 @@ keywords:
 
 ---
 
-You have come so far and we are finally ready for the last piece of the puzzle: saving your changes.  It has been a long and arduous road, but rest assured the end is in sight.
+You have come so far and we are finally ready for the last piece of the puzzle: saving your changes.  It has been a long and arduous road, but rest assured, the end is in sight.
 
 Thus far in our `/create-post` endpoint we have done the following:
 
 1. Extracted our new post data and made a new object to hold it.
 2. Read in the existing blogposts from disk, and updated that data.
-3. Sent the new post object back as the reponse.
+3. Sent the new post object back as the response.
 
 Now, between steps 2 and 3 we have to write it back to disk again.
 
@@ -56,9 +56,9 @@ console.log(posts);
 console.log(updatedData);
 ```
 
-Check it out by restarting your server & hitting the post button again & watching your terminal.
+Check it out by restarting your server, hitting the post button again, and watching your terminal.
 
-First log you see on your terminal is a JavaScript object while the second log is a JSON string.
+The first log message you see on your terminal is a JavaScript object, and the second is a JSON string.
 
 Aside from some different formatting, at first you might think they are exactly the same.  But there are some subtle differences like the object property names being wrapped in `"`s in JSON.
 
@@ -78,13 +78,13 @@ The arguments to `writeFile()` are:
 2. The **data** you want to write to the file
 3. A **callback** function to run after the write is complete.
 
-The callback function for `writeFile` only takes one argument: an error object if the write failed or `null` if it was successful.
+The callback function for `writeFile` only takes one parameter: an error object that returns if the write failed, or `null` if it was successful.
 
 Here's where it can get confusing, because both `writeFile` and `readFile` are non-blocking.
 
-This means that we have to call `writeFile` inside of the callback for `readFile` and send the response back in the callback function of `writeFile`.
+This means that we have to call `writeFile` inside of the callback for `readFile`, and send the response back in the callback function of `writeFile`.
 
-Update the `readFile` callback of your `/create-post` endpoint like such:
+Update the `readFile` callback of your `/create-post` endpoint like so:
 
 ```javascript
 fs.readFile(__dirname+'/data/posts.json', function(error, data){
@@ -111,9 +111,9 @@ fs.readFile(__dirname+'/data/posts.json', function(error, data){
 });
 ```
 
-We also check the value of `error` in the `writeFile()` callback the same way we did for `readFile()`.  Just incase.
+We also check the value of `error` in the `writeFile()` callback the same way we did for `readFile()`.  Just in case.
 
-Once you have saved those changes, restart your server & try to make a new post.  It should appear in the page as expected, and if you refresh the page the posts should still be displayed.
+Once you have saved those changes, restart your server and try to make a new post.  It should appear in the page as expected, and if you refresh the page the posts should still be displayed.
 
 Also you could open up the file `data/posts.json` in your editor and to see how it has changed.
 
@@ -174,7 +174,7 @@ app.get('/get-posts', function(request, response){
 });
 
 app.listen(8080, function () {
-  console.log('Server has started listening on port 8080. ');
+  console.log('Server has started listening on port 8080.');
 });
 ```
 {: .solution }

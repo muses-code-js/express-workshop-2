@@ -24,8 +24,8 @@ To add these changes do the following steps:
 
     ```css
     @font-face {
-      font-family: "NotoColorEmoji";
-      src: url("NotoColorEmoji.ttf");
+      font-family: 'NotoColorEmoji';
+      src: url('NotoColorEmoji.ttf');
       text-decoration: none;
       font-style: normal;
     }
@@ -36,7 +36,7 @@ To add these changes do the following steps:
     }
 
     div.mood .emoji {
-     font-family: "NotoColorEmoji";
+     font-family: 'NotoColorEmoji';
      font-size: 30px;
     }
 
@@ -45,7 +45,7 @@ To add these changes do the following steps:
      font-size: 20px;
      display: inline-block;
     }
-    
+
     @media screen and (max-width: 600px) {
       div.mood-select {
         margin: 15px 20px 0px 20px;
@@ -58,7 +58,7 @@ To add these changes do the following steps:
     Find the line `// 2. insert mood display here`.
 
     Insert the following code after that line:
-    
+
     ```javascript
     var moodNames = [
       '',
@@ -70,7 +70,7 @@ To add these changes do the following steps:
       '<span class="emoji">😲</span> Suprised',
       '<span class="emoji">😎</span> Smug',
       '<span class="emoji">👑</span> Triumphant',
-      '<span class="emoji">😍</span> In love' 
+      '<span class="emoji">😍</span> In love'
     ];
     var moodDiv = document.createElement('div');
     moodDiv.className = 'mood';
@@ -102,7 +102,7 @@ To add these changes do the following steps:
     </div>
     ```
 
-Make sure you save those changes & refresh the web page.  You should see the "Mood" menu near the `POST` button.
+Make sure you save those changes and refresh the web page.  You should see the "Mood" menu near the `POST` button.
 
 It will look like this:
 
@@ -111,9 +111,9 @@ It will look like this:
 With the above changes, the webpage now does the following:
 
 1. When creating a new post, it sends a value of 0 to 9 as the field `mood` as part of the form data.
-2. Expects the blogpost objects retreived from `/get-posts` to each have a mood property, with a value of 0 to 9, for which it displays the corresponding mood emoji and description.
+2. Expects the blogpost objects retrieved from `/get-posts` to each have a mood property, with a value of 0 to 9, for which it displays the corresponding mood emoji and description.
 
-Once properly implemented posts with a mood set with look like this:
+Once properly implemented posts with a mood set will look like this:
 
 ![Post with Mood set]({{'/assets/challenge-2b.png' | relative_url }}){:title="Post with Mood set" class="img-responsive imgbox"}
 
@@ -183,4 +183,4 @@ app.post('/create-post', function(request, response){
 ```
 {: .solution }
 
-Remember just because your solution doesn't look exactly like this one doesn't mean that it is wrong.  The important question is whether it works or not.  If your answer is very different you might want to ask a mentor incase you might be doing something that looks like it works but will create problems for you later.
+Remember just because your solution doesn't look exactly like this one doesn't mean that it is wrong.  The important question is whether it works or not.  If your answer is very different you might want to ask a mentor in case you are doing something that looks like it works but will create problems for you later.

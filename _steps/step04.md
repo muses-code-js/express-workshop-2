@@ -12,9 +12,9 @@ keywords:
     define: |
       The part of the URL that comes after the hostname (and port if specified). It indicates the specific resource that the request relates to.
 
-      E.g. `http://example.com/foods/chocolate` the path is `/foods/chocolate`.  
+      e.g. `http://example.com/foods/chocolate` the path is `/foods/chocolate`.  
 
-      E.g. `http://example.com` the path is `/`.
+      e.g. `http://example.com` the path is `/`.
 
   - term: route
     define: The mapping between a **URL path**, a **request method** and a **handler function**.
@@ -46,10 +46,10 @@ To do this Express keeps a list of items called 'routes'.
 Each route has three components:
 
 1. A HTTP **request method**
-2. An **URL path** (AKA **endpoint**)
+2. A **URL path** (AKA **endpoint**)
 3. A **handler function**
 
-When the server receives a request, it looks at the request's URL and request method.  If it has a route that matches both then it reponds to the request by running that route's function.
+When the server receives a request, it looks at the request's URL path and request method.  If it has a route that matches both, then it responds to the request by running the handler function associated with the matching route.
 
 This process of matching a request to the right **handler function** is called "routing".  
 
@@ -57,11 +57,9 @@ We add routes to our server to tell it which requests to respond to, and what to
 
 ## Adding a Route
 
-Express has a function for each **request method** for adding routes.
+To add a route using Express, you call the function for the **request method**, using the **URL** and your **handler function** as parameters.
 
-To add a route, you call the appropriate function with the parameters of the **URL** and your **handler function**.  
-
-Let's see adding a GET route in action.
+Let's try adding a GET route.
 
 Update `server.js` like so:
 
@@ -69,16 +67,16 @@ Update `server.js` like so:
 var express = require('express');
 var app = express();
 
-app.get("/hello", function (request, response) {
-  response.send("Hello World!");
+app.get('/hello', function (request, response) {
+  response.send('Hello World!');
 });
 
 app.listen(8080, function () {
-  console.log('Server has started listening on port 8080. ');
+  console.log('Server has started listening on port 8080.');
 });
 ```
 
-So as before, but we've added a route for GET requests to the `/hello` endpoint which just sends the simple text response of 'Hello World!' back.
+Our new lines use the `get` function, which adds a route for GET requests. GET requests that are sent to the `/hello` endpoint trigger our handler function, which sends back a simple text response of 'Hello World!'.
 
 Make sure your changes to `server.js` are saved.
 
@@ -92,11 +90,11 @@ Open a new browser window or tab and type in the address below:
  * **For Cloud9 Environment**
 
     <pre><code>https://<b>WORKSPACE</b>-<b>USERNAME</b>.c9users.io:8080/hello</code></pre>
-    Don't forget to replace **USERNAME** with your Cloud9 username and **WORKSPACE** with the name of your workspace:
+    Don't forget to replace **USERNAME** with your Cloud9 username and **WORKSPACE** with the name of your workspace.
 
  * **For Local Environment**
 
-    <pre><code>http://localhost:8000</code></pre>
+    <pre><code>http://localhost:8080</code></pre>
 
 Then press ENTER and you should see the "Hello World!" message displayed in your browser like a webpage.
 
@@ -104,18 +102,18 @@ It will look a little like this:
 
 ![Testing the /hello endpoint in the browser](../assets/step4-b.png){:title="Testing the /hello endpoint in the browser" class="img-responsive imgbox"}
 
-Everytime you request a webpage in your browser, it is doing a GET request.  Sending GET requests is probably the most common daily activity in the world today.  :smile:
+Every time you request a webpage in your browser, it is doing a GET request.  Sending GET requests is probably the most common daily activity in the world today.  :smile:
 
 ## Looking more closely at handler functions
 
 The second parameter we supplied for the route was a **handler function**.
 
-A handler function is just a regular Javascript function which `app` will invoke when it matches that route.  `app` passes two parameters to it as well: one that contains the request data, and one to use to send a response.
+A handler function is just a regular Javascript function which `app` will invoke when a request matches the associated route.  `app` passes two parameters to it as well: one that contains the request data, and one to use to send a response.
 
 Let's look at the handler function from the `/hello` route above:
 ```javascript
 function (request, response) {
-  response.send("Hello World!");
+  response.send('Hello World!');
 }
 ```
 
@@ -133,7 +131,7 @@ Here's what you need to know:
 
  * request method is `get`
  * the endpoint is `/chocolate`
- * the reponse should be `Mmmm, chocolate ...`
+ * the response should be `Mmmm, chocolate ...`
 
 Test it by going to in your browser:
 
@@ -147,12 +145,12 @@ Check the solution below if you get stuck.
 var express = require('express');
 var app = express();
 
-app.get("/chocolate", function (request, response) {
-  response.send("Mmmm, chocolate ...");
+app.get('/chocolate', function (request, response) {
+  response.send('Mmmm, chocolate ...');
 });
 
 app.listen(8080, function () {
-  console.log('Server has started listening on port 8080. ');
+  console.log('Server has started listening on port 8080.');
 });
 ```
 {: .solution }
