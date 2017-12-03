@@ -57,58 +57,57 @@ All of the code that we are going to write in this tutorial will go in one file,
 
 We will now create that file and write the code to start the server running.
 
-1. **Create a server.js file**
+### Create a server.js file
 
-    Create a new file called `server.js`.  You can do this using the `File` menu in Cloud9.  Once created you will see it listed in the file view.  Double-click on it to open it in an editor.  It should be completely empty.
+Create a new file called `server.js`.  You can do this using the `File` menu in Cloud9.  Once created you will see it listed in the file view.  Double-click on it to open it in an editor.  It should be completely empty.
 
-2. **Import the Express module**
+### Import the Express module
 
-    We already installed Express in Step 2, but we need a way to refer to it in our code so we can use it.  We do that using the function `require`.  
+We already installed Express in Step 2, but we need a way to refer to it in our code so we can use it.  We do that using the function `require`.  
 
-    To import Express, write the following at the top of `server.js`:
+To import Express, write the following at the top of `server.js`:
 
-    ```javascript
+```javascript
 var express = require('express');
-    ```
+```
 
-    Now we have a variable `express` that points to whatever the Express package  exports.  We could have called this variable anything we wanted but it's common practice to use the same name as the package.
+Now we have a variable `express` that points to whatever the Express package  exports.  We could have called this variable anything we wanted but it's common practice to use the same name as the package.
 
-3. **Create the server object**
+### Create the server object
 
-    The Express module exports a single function.  When we **invoke** that function it returns an **Express application** object.  That object provides the all the behaviour that we use to build our server.
+The Express module exports a single function.  When we **invoke** that function it returns an **Express application** object.  That object provides the all the behaviour that we use to build our server.
 
-    Add the second line of code to your `server.js` file:
+Add the second line of code to your `server.js` file:
 
-    ```javascript
+```javascript
 var express = require('express');
 var app = express();
-    ```
+```
 
-    This new line invokes the `express()` from and stores the result in the variable `app`.
+This new line invokes the `express()` from and stores the result in the variable `app`.
 
-4. **Start our server "listening"**
+### Start our server "listening"
 
-    Now we have our server object (`app`) we can use its `listen()` function to start it listening for requests.
+Now we have our server object (`app`) we can use its `listen()` function to start it listening for requests.
 
-    The `listen()` function takes two arguments: a **port** number and a **callback function**.
+The `listen()` function takes two arguments: a **port** number and a **callback function**.
 
-    The **port number** can be thought of as a door number or apartment number.  Requests for this server will be sent "to that port". As every apartment on the same street has a different door number,
-    every server running on the same computer must be listening on a different port.
+The **port number** can be thought of as a door number or apartment number.  Requests for this server will be sent "to that port". As every apartment on the same street has a different door number, every server running on the same computer must be listening on a different port.
 
-    Cloud9 only allows you to use port `8080`.  If you are running Node.js on your own machine you can use any port between `1023` and `65535`.  We will use port `8080`.
+Cloud9 only allows you to use port `8080`.  If you are running Node.js on your own machine you can use any port between `1023` and `65535`.  We will use port `8080`.
 
-    The **callback function** is a function for the server to run immediately after it starts listening.  We are going to use it to just display a message to let us known that the server started listening.
+The **callback function** is a function for the server to run immediately after it starts listening.  We are going to use it to just display a message to let us known that the server started listening.
 
-    Add the last three lines to `server.js`:
+Add the last three lines to `server.js`:
 
-    ```javascript
-    var express = require('express');
-    var app = express();
+```javascript
+var express = require('express');
+var app = express();
 
-    app.listen(8080, function () {
-      console.log('Server has started listening on port 8080. ');
-    });
-    ```
+app.listen(8080, function () {
+  console.log('Server has started listening on port 8080. ');
+});
+```
 
 ## Start it up
 

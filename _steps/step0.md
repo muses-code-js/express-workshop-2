@@ -17,6 +17,7 @@ keywords:
     define: software suite containing editor, terminal, and other tools
 
 ---
+
 Ok before you get started coding you need to setup all the things that you are going to need.
 
 To create software using Node.js you need three things:
@@ -25,15 +26,17 @@ To create software using Node.js you need three things:
 2. An editor
 3. A command-line terminal (to run commands in)
 
-You *can* download and setup these things on your own computer but it can be tricky and time consuming even if you have experience doing this kind of thing.  It depends a lot of your computer and what Operating System and other software you already have installed.  
+You *can* download and setup these things on your own computer but it can be tricky and time consuming.
 
 To save time, we recommend using [Cloud9](https://c9.io), an online service that provides all of those things preconfigured as a web application.
 
-Additionally, in order to make Cloud9 a little easier to setup we ask you to create a GitHub account 
+We'll step you through the entire process below.
 
-We'll step you through the entire process below.  We also provide the basics on how to setup your own machine if you want to take that route. 
+For those who want to take the leap of setting up your own machine, the steps are [here]({{'/local-config' | relative_url}}).
 
 ## GitHub
+
+Before we set up Cloud9, let's create a [GitHub.com](https://github.com) account.
 
 [GitHub.com](https://github.com) is a web site that makes it really easy for multiple people to share and work on the same projects together using a program called **Git**.  Git provides you with a way of tracking all the changes that you make to your project.  Git is a pretty big topic that we aren't going to go into here, so don't worry too much about understanding it right now.  
 
@@ -54,7 +57,7 @@ By the way, Git is *very* popular and widely used both in companies and open-sou
 
 This will take a moment, and then you will be redirected to your new copy of the repository.
 
-Don't worry too much if you didn't understand what happened there.  The key thing is that you now have a copy of the workshop files in GitHub.
+You now have your own copy of the workshop files in GitHub.
 
 ## Cloud9
 
