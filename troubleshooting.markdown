@@ -11,7 +11,7 @@ Here are some questions to that might help you.
  * Did you run the commands in the right directory?
  * Did you save your changes before starting the server?
  * Did you restart the server after saving your changes?
- * Do your brackets `[]`, parenthesis `()`, braces `{}`, quotes `''`, and double-quote `""` all match up.  Generally they are always in pairs.
+ * Do your brackets `[]`, parenthesis `()`, braces `{}`, quotes `''`, and double-quotes `""` all match up.  Generally they are always in pairs.
  * Have you tried adding some `console.log()` statements to the code in question to check that variables have the values you expect?
  
 ## Error Messages
