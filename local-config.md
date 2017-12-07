@@ -82,7 +82,7 @@ To open your command-line shell:
  * **macOS**: you can find the Terminal app in the Applications/Utilities folder or in 'Other' via Launchpad.
  * **Linux**: will vary by GUI, but you should find a Terminal on your system menu
 
-You will need to "change directory" using the `cd` command to where you unzipped the workshop files. 
+You will need to "change directory" using the `cd` command to where you unzipped the workshop files. This is where you will be running all the commands for the workshop.
 
 Refer to our [Command Line Cheetsheet](https://github.com/node-girls/cheatsheets/blob/master/command-line-cheatsheet.md) for the basic commands you'll need to know.
 
