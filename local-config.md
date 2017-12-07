@@ -26,7 +26,17 @@ Once Node.js is installed, open a terminal and enter the command `node --version
 
 ### Download the workshop files 
 
-Now to download the workshop files to your computer.
+You can either use **git** to clone the workshop repository or just download a zip file of the workshop files.
+
+#### Clone the repo using Git
+
+If you have **git** already installed and know how to use it then you can clone the repo at <https://github.com/node-girls-australia/express-workshop-2>.
+
+Alternatively if you have a Github account then you can fork our repo there and clone your fork.
+
+#### Or download the zip file
+
+If you don't have git installed, then you can just download the zip file of the workshop files.
 
 Go to <https://github.com/node-girls-australia/express-workshop-2/archive/master.zip> to download a ZIP of the workshop files.  It will be downloaded as the file `express-workshop-2-master.zip`
 
