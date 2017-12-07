@@ -32,7 +32,7 @@ To save time, we recommend using [Cloud9](https://c9.io), an online service that
 
 We'll step you through the entire process below.
 
-For those who want to take the leap of setting up your own machine, the steps are [here]({{'/local-config' | relative_url}}).
+For those who want to take the leap of setting up your own machine, the steps are [here]({{'/local-setup' | relative_url}}).
 
 ## GitHub
 
