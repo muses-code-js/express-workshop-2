@@ -28,7 +28,9 @@ If you used Cloud9 for this workshop then you also created a GitHub account.  Gi
 
 **Advice:** There *are* some great GUI tools available for Git such as [Git Tower](https://www.git-tower.com/mac/), [GitHub Desktop](https://desktop.github.com/), and [GitKraken](https://www.gitkraken.com/).  However it is easy to get over confident with these tools and get tripped up once you get to advanced usage unless you have a solid understanding of how Git works.  For that reason it is highly advised to become familar with git on the command-line to get a better understanding of it.  Even if you also use the GUI tools to make some tasks easier.
 
-## Node & Javascript Podcasts
+## Node, Javascript & Technology Podcasts
+
+[The Women in Tech Show](https://thewomenintechshow.com/) weekly technical interviews with prominent women in tech.
 
 [Node Up](http://nodeup.com/) is a podcast with Node.js specific discussions.
 
