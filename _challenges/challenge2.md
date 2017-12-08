@@ -220,7 +220,7 @@ app.delete('/delete-post/:timestamp', function(request, response){
       });
 
       // stringify and write to disk
-      updatedData = JSON.stringify(posts);
+      var updatedData = JSON.stringify(posts);
       fs.writeFile(__dirname+'/data/posts.json', updatedData, function(error){
         if(error){
           console.log('Error writing posts.json: '+error);
