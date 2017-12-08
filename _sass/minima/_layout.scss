@@ -105,69 +105,44 @@
 /**
  * Site footer
  */
-.site-footer {
-  border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
-}
+ footer {
+ 	background: #333;
+ 	position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+ 	padding-top: 25px;
+ 	padding-bottom: 15px;
 
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
-}
+  div.social-media {
+ 	  color: #fff;
+ 	  margin-bottom: 10px;
 
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
-
-.footer-col-wrapper {
-  @include relative-font-size(0.9375);
-  color: $grey-color;
-  margin-left: -$spacing-unit / 2;
-  @extend %clearfix;
-}
-
-.footer-col {
-  float: left;
-  margin-bottom: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
+    a {
+     	color: #a7a7a7;
+     	font-size: 16px;
+     	font-weight: bold;
+     	text-decoration: none;
+      &:hover {
+     	  text-decoration: underline;
+        color: $nodegreen;
+      }
+    }
+    
+    ul {
+      list-style-type: none;
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 0px;
+      li {
+        font-size: 16px;
+        margin-bottom: 9px;
+      }
+    }
+    
   }
+  
 
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
 }
 
 
@@ -230,7 +205,7 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
-
+  padding-bottom: 150px;
 
   h2 {
     margin-top: $spacing-unit * 2;
@@ -268,3 +243,15 @@
     }
   }
 }
+
+@include media-query($on-palm) {
+  .post-content {
+    padding-bottom: 200px;  
+  }
+}
+@include media-query($on-laptop) {
+  .post-content {
+    padding-bottom: 200px;  
+  }
+}
+
