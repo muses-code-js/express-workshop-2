@@ -8,7 +8,7 @@ layout: default
   <header class="post-header">
     <h2 class="post-title"> Challenge {{page.cnumber}} - {{ page.title | escape }}</h1>
   </header>
-  
+
   <div class="post-content">
     <div><b>Difficulty: </b>
       {% for i in (1..page.difficulty) %}<span class="fa fa-star"></span>{% endfor %}{% for i in (page.difficulty..4) %}<span class="fa fa-star-o"></span>{% endfor %}
@@ -29,7 +29,6 @@ layout: default
     </p>
     </div>
     {{ contentArray.last }}
-    {% include page-nav.html %}
     {% include keywords-table.html %}
 
   </div>
