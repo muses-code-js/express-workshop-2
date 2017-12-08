@@ -11,13 +11,13 @@ keywords:
 
 You made it!  You're awesome!
 
-You might want to go strut about the room a bit at this point and get some high fives.  
+You might want to go strut about the room a bit at this point and get some high fives.
 
 You've earned them.
 
 So what's next?
 
-If you look at the menu to the right you will see that there are two more sections:
+If you look at the menu to the left you will see that there are two more sections:
 
 1. **Challenges**
 2. **The Journey Continues**
