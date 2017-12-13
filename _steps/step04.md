@@ -94,7 +94,7 @@ Open a new browser window or tab and type in the address below:
 
  * **For Local Environment**
 
-    <pre><code>http://localhost:8080</code></pre>
+    <pre><code>http://localhost:8080/hello</code></pre>
 
 Then press ENTER and you should see the "Hello World!" message displayed in your browser like a webpage.
 
