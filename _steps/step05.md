@@ -36,7 +36,7 @@ All of the static assets for our app are in the `public` folder.  We are going t
 2. Add the following line of code *after* the line with `var app = express();`.
 
     ```javascript
-app.use(express.static("public"));
+    app.use(express.static("public"));
     ```
 3. Restart your server, go to your app in your browser.
 
