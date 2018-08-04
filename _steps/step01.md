@@ -37,7 +37,7 @@ This creates a new file with default values and displays it for you.
 
 Your file will look something like:
 
-```
+```json
 {
   "name": "express-workshop-2",
   "version": "1.0.0",
