@@ -33,9 +33,9 @@ There's a few other optional parameters you can pass as well but we won't worry 
 Update your `fs.readFile` code as follows to parse the file data.
 
 ```javascript
-fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
-      console.log('Error reading posts.json: '+error);
+fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
+      console.log('Error reading posts.json: ' + error );
       response.status(500);
       response.send(error);
     } else {
@@ -87,9 +87,9 @@ This means that we have to call `writeFile` inside of the callback for `readFile
 Update the `readFile` callback of your `/create-post` endpoint like so:
 
 ```javascript
-fs.readFile(__dirname+'/data/posts.json', function(error, data){
-  if(error){
-    console.log('Error reading posts.json: '+error);
+fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+  if (error) {
+    console.log('Error reading posts.json: ' + error);
     response.status(500);
     response.send(error);
   } else {
@@ -97,16 +97,15 @@ fs.readFile(__dirname+'/data/posts.json', function(error, data){
     posts.blogposts.push(newPost);
     var updatedData = JSON.stringify(posts);
 
-    fs.writeFile(__dirname+'/data/posts.json', updatedData,function(error){
-      if(error){
-        console.log('Error writing posts.json: '+error);
+    fs.writeFile(__dirname+'/data/posts.json', updatedData, function (error) {
+      if (error) {
+        console.log('Error writing posts.json: ' + error);
         response.status(500);
         response.send(error);        
       } else {
         response.send(newPost);              
       }
     });
-
   }
 });
 ```
@@ -131,16 +130,16 @@ var app = express();
 app.use(express.static('public'));
 app.use(formidable());
 
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   var now = Date.now();
   var newPost = {
     timestamp: now,
     content: request.fields.blogpost
   }
 
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
-      console.log('Error reading posts.json: '+error);
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
+      console.log('Error reading posts.json: ' + error);
       response.status(500);
       response.send(error);
     } else {
@@ -148,9 +147,9 @@ app.post('/create-post', function(request, response){
       posts.blogposts.push(newPost);
       var updatedData = JSON.stringify(posts);
 
-      fs.writeFile(__dirname+'/data/posts.json', updatedData,function(error){
+      fs.writeFile(__dirname+'/data/posts.json', updatedData, function (error) {
           if(error){
-              console.log('Error writing posts.json: '+error);
+              console.log('Error writing posts.json: ' + error);
               response.status(500);
               response.send(error);
           } else {
@@ -161,10 +160,10 @@ app.post('/create-post', function(request, response){
   });
 });
 
-app.get('/get-posts', function(request, response){
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
-      console.log('Error reading posts.json: '+error);
+app.get('/get-posts', function (request, response) {
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
+      console.log('Error reading posts.json: ' + error);
       response.status(500);
       response.send(error);
     } else {
