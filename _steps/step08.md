@@ -34,14 +34,13 @@ We use both of those values to put together a new object which we call `newPost`
 Update your `/create-post` route like below:
 
 ```javascript
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   var now = Date.now();
 
   var newPost = {
     timestamp: now,
     content: request.fields.blogpost
   }
-
 });
 ```
 
@@ -54,7 +53,7 @@ We do that with `response.send()`.
 Update your `/create-post` route like below:
 
 ```javascript
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   var now = Date.now();
 
   var newPost = {
@@ -62,7 +61,6 @@ app.post('/create-post', function(request, response){
     content: request.fields.blogpost
   }
   response.send(newPost);
-
 });
 ```
 
@@ -90,7 +88,7 @@ var app = express();
 app.use(express.static('public'));
 app.use(formidable());
 
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   var now = Date.now();
   var newPost = {
     timestamp: now,
@@ -99,9 +97,9 @@ app.post('/create-post', function(request, response){
   response.send(newPost);
 });
 
-app.get('/get-posts', function(request, response){
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
+app.get('/get-posts', function (request, response) {
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
       console.log('Error reading posts.json: '+error);
       response.status(500);
       response.send(error);
