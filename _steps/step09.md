@@ -29,20 +29,19 @@ Reading the file is done the same way as in our `/get-posts` endpoint, using `fs
 Update your `/create-post` endpoint as follows:
 
 ```javascript
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   var now = Date.now();
   var newPost = {
     timestamp: now,
     content: request.fields.blogpost
   }
 
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
       console.log('Error reading posts.json: '+error);
       response.status(500);
       response.send(error);
     } else {
-
       response.send(newPost);      
     }
   });
@@ -105,14 +104,13 @@ Once we have the file data we use `JSON.parse()` to turn it into an object.
 Update your `fs.readFile` code as follows to parse the file data.
 
 ```javascript
-fs.readFile(__dirname+'/data/posts.json', function(error, data){
-  if(error){
-    console.log('Error reading posts.json: '+error);
+fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+  if (error) {
+    console.log('Error reading posts.json: ' + error);
     response.status(500);
     response.send(error);
   } else {
     var posts = JSON.parse(data);
-
     response.send(newPost);      
   }
 });
@@ -168,32 +166,31 @@ var app = express();
 app.use(express.static('public'));
 app.use(formidable());
 
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   var now = Date.now();
   var newPost = {
     timestamp: now,
     content: request.fields.blogpost
   }
 
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
-      console.log('Error reading posts.json: '+error);
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
+      console.log('Error reading posts.json: '+ error);
       response.status(500);
       response.send(error);
     } else {
       var posts = JSON.parse(data);
       posts.blogposts.push(newPost);
-      console.log(posts.blogposts)
-
+      console.log(posts.blogposts);
       response.send(newPost);
     }
   });
 });
 
-app.get('/get-posts', function(request, response){
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
-      console.log('Error reading posts.json: '+error);
+app.get('/get-posts', function (request, response) {
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
+      console.log('Error reading posts.json: ' + error);
       response.status(500);
       response.send(error);
     } else {
