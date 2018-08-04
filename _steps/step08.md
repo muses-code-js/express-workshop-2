@@ -36,7 +36,6 @@ Update your `/create-post` route like below:
 ```javascript
 app.post('/create-post', function (request, response) {
   var now = Date.now();
-
   var newPost = {
     timestamp: now,
     content: request.fields.blogpost

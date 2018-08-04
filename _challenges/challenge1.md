@@ -146,7 +146,7 @@ If you get stuck or just want to compare with your answer click below to see our
 Note that this solution only shows the endpoint in question, not all of `server.js`.
 
 ```javascript
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   var now = Date.now();
   var newPost = {
     timestamp: now,
@@ -154,9 +154,9 @@ app.post('/create-post', function(request, response){
     mood: request.fields.mood
   }
 
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
     if(error){
-      console.log('Error reading posts.json: '+error);
+      console.log('Error reading posts.json: ' + error);
       response.status(500);
       response.send(error);
     } else {
@@ -168,8 +168,8 @@ app.post('/create-post', function(request, response){
       console.log(posts);
       console.log(updatedData);
 
-      fs.writeFile(__dirname+'/data/posts.json', updatedData, function(error){
-        if(error){
+      fs.writeFile(__dirname+'/data/posts.json', updatedData, function (error) {
+        if (error) {
           console.log('Error writing posts.json: '+error);
           response.status(500);
           response.send(error);

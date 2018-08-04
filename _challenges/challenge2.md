@@ -203,26 +203,26 @@ If you get stuck or just want to compare with your answer click below to see our
 Note that this solution only shows the endpoint in question, not all of `server.js`.
 
 ```javascript
-app.delete('/delete-post/:timestamp', function(request, response){
+app.delete('/delete-post/:timestamp', function (request, response) {
 
   // read our file in
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
-      console.log('Error reading posts.json: '+error);
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
+      console.log('Error reading posts.json: ' + error);
       response.status(500);
       response.send(error);
     } else {
       var posts = JSON.parse(data);
 
       // filter out post with same timestamp value as request.params.timestamp
-      posts.blogposts = posts.blogposts.filter(function(post){
+      posts.blogposts = posts.blogposts.filter(function (post) {
         return post.timestamp != request.params.timestamp;
       });
 
       // stringify and write to disk
       var updatedData = JSON.stringify(posts);
-      fs.writeFile(__dirname+'/data/posts.json', updatedData, function(error){
-        if(error){
+      fs.writeFile(__dirname+'/data/posts.json', updatedData, function (error) {
+        if (error) {
           console.log('Error writing posts.json: '+error);
           response.status(500);
           response.send(error);
