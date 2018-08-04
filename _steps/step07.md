@@ -43,7 +43,7 @@ So far all of the endpoints you have created have been for the `GET` request met
 Add the following to `server.js`:
 
 ```javascript
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
 
 });
 ```
@@ -83,7 +83,7 @@ What `express-formidable` does is automatically extract form data from the reque
 To verify that it is working, add a `console.log` statement to your **handler function** to log this object.
 
 ```javascript
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   console.log(request.fields);
 });
 ```
@@ -110,13 +110,13 @@ var app = express();
 app.use(express.static('public'));
 app.use(formidable());
 
-app.post('/create-post', function(request, response){
+app.post('/create-post', function (request, response) {
   console.log(request.fields);
 });
 
-app.get('/get-posts', function(request, response){
-  fs.readFile(__dirname+'/data/posts.json', function(error, data){
-    if(error){
+app.get('/get-posts', function (request, response) {
+  fs.readFile(__dirname+'/data/posts.json', function (error, data) {
+    if (error) {
       console.log('Error reading posts.json: '+error);
       response.status(500);
       response.send(error);
