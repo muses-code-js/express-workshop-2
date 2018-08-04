@@ -69,7 +69,7 @@ To add these changes do the following steps:
           });
       })
       .catch(function (err) {
-        alert('Delete failed!\n\n'+err);
+        alert('Delete failed!\n\n' + err);
       });
     }
     ```
@@ -82,7 +82,7 @@ To add these changes do the following steps:
 
     ```javascript
     var delButton = document.createElement('div');
-    delButton.onclick = function(){
+    delButton.onclick = function () {
       if (confirm('Are you sure you want to delete this post?  You can\'t undo this.')){
         deletePost(post.timestamp);
       }
@@ -121,8 +121,8 @@ Each of those route parameters will be available as a property of `request.param
 As an example:
 
 ```javascript
-app.get('/say/:name/:phrase', function(request, response){
-  response.send(request.params.name + ' says "'+request.params.phrase+'"' );
+app.get('/say/:name/:phrase', function (request, response) {
+  response.send(request.params.name + ' says "'+ request.params.phrase+'"' );
 });
 ```
 
@@ -151,7 +151,7 @@ Let's demonstrate it with an array of names.  We want to remove the names from t
 var names = [ 'Michael', 'Susan', 'Angelica', 'David', 'Joe'];
 
 // making a new array using filter
-var filteredNames = names.filter( function(name){
+var filteredNames = names.filter( function (name) {
   return name.length > 5;   //only include those longer than 5 letters
 } );
 
@@ -176,9 +176,9 @@ You could also do the assignment and filter in one step like this:
 ```javascript
 var names = [ 'Michael', 'Susan', 'Angelica', 'David', 'Joe'];
 
-names = names.filter( function(name){
+names = names.filter(function (name) {
   return name.length > 5;
-} );
+});
 
 console.log(names);
 ```
